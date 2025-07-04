@@ -150,6 +150,7 @@ def DTConstructionRecipesHandle(uniqueTag, path, categoryTag, requiredItems, unl
         DT_ConstructionRecipesNewData = loadJson(newPath)
 
         DT_ConstructionRecipesNewData["NameMap"].append(uniqueTag)
+        DT_ConstructionRecipesModData["NameMap"].append(uniqueTag)
 
         itemArray = []
 
