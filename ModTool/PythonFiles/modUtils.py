@@ -80,7 +80,7 @@ def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, userName):
         template["Value"][0]["Value"] = f"{uniqueTag}.Name"
         template["Value"][1]["Value"] = f"{uniqueTag}.Description"
         #Edit Actor path
-        template["Value"][3]["Value"]["AssetPath"]["AssetName"] = assetPath
+        template["Value"][3]["Value"]["AssetPath"]["AssetName"] = f"{assetPath}.{blueprintName}_C"
         #Edit Backwards Compatibility Actor path
         template["Value"][4]["Value"][0]["Value"][0]["Value"]["AssetPath"]["AssetName"] = f"{assetPath}.{blueprintName}_C"
         template["Value"][5]["Value"][0]["Value"].append(categoryTag)
