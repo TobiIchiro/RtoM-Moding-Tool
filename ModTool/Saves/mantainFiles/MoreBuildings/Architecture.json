@@ -1,0 +1,18 @@
+{
+    "Exports": [
+        {
+            "Table": {
+                "Value": [
+                    [
+                        "TobiPack_AleKeg_A.Name",
+                        "Ale Keg"
+                    ],
+                    [
+                        "TobiPack_AleKeg_A.Description",
+                        "Tavern Keg full of Evening Ale"
+                    ]
+                ]
+            }
+        }
+    ]
+}
