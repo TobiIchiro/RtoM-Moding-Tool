@@ -18,8 +18,8 @@ def genUniqueTag(baseTag, exports):
 def architectureHandle(tag, name, description, path):
 
         #File paths
-        modPath = os.path.abspath(os.path.join(path,"..","Saves","mod","Architecture.json"))
-        newPath = os.path.abspath(os.path.join(path,"..","Saves","newConstructions","Architecture.json"))
+        modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","Architecture.json"))
+        newPath = os.path.abspath(os.path.join(path,"..","Saves","mantainFiles","MoreBuildings","Architecture.json"))
 
         #Loading Files
         architectureModData = loadJson(modPath)
@@ -54,8 +54,8 @@ def architectureHandle(tag, name, description, path):
 
 def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, userName):
         #File paths
-        modPath = os.path.abspath(os.path.join(path,"..","Saves","mod","DT_Constructions.json"))
-        newPath = os.path.abspath(os.path.join(path,"..","Saves","newConstructions","DT_Constructions.json"))
+        modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_Constructions.json"))
+        newPath = os.path.abspath(os.path.join(path,"..","Saves","mantainFiles","MoreBuildings","DT_Constructions.json"))
 
         templatePath = os.path.abspath(os.path.join(path,"..","Data","ConstructionTemplate.json"))
         importTemplatePath = os.path.abspath(os.path.join(path,"..","Data","constructionsImportTemplates.json"))
@@ -135,8 +135,8 @@ def DTConstructionRecipesHandle(uniqueTag, path, categoryTag, requiredItems, unl
         unlockRequirementsPath = os.path.abspath(os.path.join(path,"..","Data","UnlockRequirementsStructs.json"))
 
         #File paths
-        modPath = os.path.abspath(os.path.join(path,"..","Saves","mod","DT_ConstructionRecipes.json"))
-        newPath = os.path.abspath(os.path.join(path,"..","Saves","newConstructions","DT_ConstructionRecipes.json"))
+        modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_ConstructionRecipes.json"))
+        newPath = os.path.abspath(os.path.join(path,"..","Saves","mantainFiles","MoreBuildings","DT_ConstructionRecipes.json"))
         
         #Loading Needes Files
         recipeTemplate = loadJson(recipeTemplatePath)
