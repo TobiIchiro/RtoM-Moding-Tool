@@ -57,8 +57,8 @@ def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, userName):
         modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_Constructions.json"))
         newPath = os.path.abspath(os.path.join(path,"..","Saves","newObjects","MoreBuildings","DT_Constructions.json"))
 
-        templatePath = os.path.abspath(os.path.join(path,"..","Data","ConstructionTemplate.json"))
-        importTemplatePath = os.path.abspath(os.path.join(path,"..","Data","constructionsImportTemplates.json"))
+        templatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","ConstructionTemplate.json"))
+        importTemplatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","constructionsImportTemplates.json"))
 
         DT_ConstructionsModData = loadJson(modPath)
         DT_ConstructionsNewData = loadJson(newPath)
@@ -128,11 +128,11 @@ def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, userName):
 
 def DTConstructionRecipesHandle(uniqueTag, path, categoryTag, requiredItems, unlockOption, unlockRequirement):
         #Needed Files paths
-        recipeTemplatePath = os.path.abspath(os.path.join(path,"..","Data","ConstructionRecipeTemplate.json"))
-        itemTemplatePath = os.path.abspath(os.path.join(path,"..","Data","ItemTemplate.json"))
-        dummyStructsPath = os.path.abspath(os.path.join(path,"..","Data","DumyStructs.json"))
-        flagsPath = os.path.abspath(os.path.join(path,"..","Data","CategoryFlags.json"))
-        unlockRequirementsPath = os.path.abspath(os.path.join(path,"..","Data","UnlockRequirementsStructs.json"))
+        recipeTemplatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","ConstructionRecipeTemplate.json"))
+        itemTemplatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","ItemTemplate.json"))
+        dummyStructsPath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","DumyStructs.json"))
+        flagsPath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","CategoryFlags.json"))
+        unlockRequirementsPath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","UnlockRequirementsStructs.json"))
 
         #File paths
         modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_ConstructionRecipes.json"))
