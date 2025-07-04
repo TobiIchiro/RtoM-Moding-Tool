@@ -19,7 +19,7 @@ def architectureHandle(tag, name, description, path):
 
         #File paths
         modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","Architecture.json"))
-        newPath = os.path.abspath(os.path.join(path,"..","Saves","mantainFiles","MoreBuildings","Architecture.json"))
+        newPath = os.path.abspath(os.path.join(path,"..","Saves","newObjects","MoreBuildings","Architecture.json"))
 
         #Loading Files
         architectureModData = loadJson(modPath)
@@ -55,7 +55,7 @@ def architectureHandle(tag, name, description, path):
 def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, userName):
         #File paths
         modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_Constructions.json"))
-        newPath = os.path.abspath(os.path.join(path,"..","Saves","mantainFiles","MoreBuildings","DT_Constructions.json"))
+        newPath = os.path.abspath(os.path.join(path,"..","Saves","newObjects","MoreBuildings","DT_Constructions.json"))
 
         templatePath = os.path.abspath(os.path.join(path,"..","Data","ConstructionTemplate.json"))
         importTemplatePath = os.path.abspath(os.path.join(path,"..","Data","constructionsImportTemplates.json"))
@@ -136,7 +136,7 @@ def DTConstructionRecipesHandle(uniqueTag, path, categoryTag, requiredItems, unl
 
         #File paths
         modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_ConstructionRecipes.json"))
-        newPath = os.path.abspath(os.path.join(path,"..","Saves","mantainFiles","MoreBuildings","DT_ConstructionRecipes.json"))
+        newPath = os.path.abspath(os.path.join(path,"..","Saves","newObjects","MoreBuildings","DT_ConstructionRecipes.json"))
         
         #Loading Needes Files
         recipeTemplate = loadJson(recipeTemplatePath)
