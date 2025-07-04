@@ -5,6 +5,7 @@ from PySide6.QtWidgets import (
     )
 from jsonHandler import loadJson
 from constructionUI import ConstructionAdderUI
+from constructionUpdater import ConstructionUpdaterUI
 import os
 
 class MainWindow(QMainWindow):
@@ -22,19 +23,16 @@ class MainWindow(QMainWindow):
         dataDir = os.path.abspath(os.path.join(scriptDir,"..","Data"))
         
         #DT_Items, Category
-        itemsData = loadJson(os.path.abspath(os.path.join(dataDir, "Items.json")))
-        categoryTagsData = loadJson(os.path.abspath(os.path.join(dataDir,"CategoryTags.json")))
-        unlockRequirementsItemsConstructions = loadJson(os.path.abspath(os.path.join(dataDir,"UnlockRequirementsItemsConstructions.json")))
+        itemsData = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "Items.json")))
+        categoryTagsData = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "CategoryTags.json")))
+        unlockRequirementsItemsConstructions = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "UnlockRequirementsItemsConstructions.json")))
 
         #Tab 1: UI Adding New Construction Recipes
         constructRecipeAdderTab = ConstructionAdderUI(scriptDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
         self.tabs.addTab(constructRecipeAdderTab, "New Construction Adder")
 
         #Tab 2: UI More Buildings Mantain Mod
-        moreBuildingMantainModTab = QWidget()
-        layout = QVBoxLayout()
-        layout.addWidget(QLabel("More Buildings Mantain Mod - Coming Soon"))
-        moreBuildingMantainModTab.setLayout(layout)
+        moreBuildingMantainModTab = ConstructionUpdaterUI(scriptDir)
         self.tabs.addTab(moreBuildingMantainModTab, "More Buildings Mantain Mod")
 
         #Tab 3: UI Adding New Armor Recipes
