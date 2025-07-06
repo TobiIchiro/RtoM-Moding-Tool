@@ -4,43 +4,43 @@
             "Table": {
                 "Value": [
                     [
-                        "TobiPack_AleKeg_A.Name",
+                        "TobiPack_AleKeg.Name",
                         "Ale Keg"
                     ],
                     [
-                        "TobiPack_AleKeg_A.Description",
+                        "TobiPack_AleKeg.Description",
                         "Tavern Keg full of Evening Ale"
                     ],
                     [
-                        "TobiPack_DecoratedWoodenFloor_A.Name",
+                        "TobiPack_Floor_Wood_3x3_A.Name",
                         "Decorated Wooden Floor"
                     ],
                     [
-                        "TobiPack_DecoratedWoodenFloor_A.Description",
+                        "TobiPack_Floor_Wood_3x3_A.Description",
                         "A beautiful decorated Wooden Floor"
                     ],
                     [
-                        "TobiPack_DecoratedWoodenCeiling_A.Name",
+                        "TobiPack_Ceiling_Center.Name",
                         "Decorated Wooden Ceiling"
                     ],
                     [
-                        "TobiPack_DecoratedWoodenCeiling_A.Description",
+                        "TobiPack_Ceiling_Center.Description",
                         "A Decorated Wooden Ceiling"
                     ],
                     [
-                        "TobiPack_OrnateCeilingCorner_A.Name",
+                        "TobiPack_Ceiling_Corner.Name",
                         "Ornate Ceiling Corner"
                     ],
                     [
-                        "TobiPack_OrnateCeilingCorner_A.Description",
-                        "Place on a wall to create a ceiling above"
+                        "TobiPack_Ceiling_Corner.Description",
+                        "Place on a wall to create a ceiling above."
                     ],
                     [
-                        "TobiPack_LargeBrazier_A.Name",
+                        "TobiPack_LargeBrazier.Name",
                         "Large Brazier"
                     ],
                     [
-                        "TobiPack_LargeBrazier_A.Description",
+                        "TobiPack_LargeBrazier.Description",
                         "A Big Brazier"
                     ]
                 ]
