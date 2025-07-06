@@ -2,7 +2,48 @@
     "Exports": [
         {
             "Table": {
-                "Value": []
+                "Value": [
+                    [
+                        "TobiPack_AleKeg_A.Name",
+                        "Ale Keg"
+                    ],
+                    [
+                        "TobiPack_AleKeg_A.Description",
+                        "Tavern Keg full of Evening Ale"
+                    ],
+                    [
+                        "TobiPack_DecoratedWoodenFloor_A.Name",
+                        "Decorated Wooden Floor"
+                    ],
+                    [
+                        "TobiPack_DecoratedWoodenFloor_A.Description",
+                        "A beautiful decorated Wooden Floor"
+                    ],
+                    [
+                        "TobiPack_DecoratedWoodenCeiling_A.Name",
+                        "Decorated Wooden Ceiling"
+                    ],
+                    [
+                        "TobiPack_DecoratedWoodenCeiling_A.Description",
+                        "A Decorated Wooden Ceiling"
+                    ],
+                    [
+                        "TobiPack_OrnateCeilingCorner_A.Name",
+                        "Ornate Ceiling Corner"
+                    ],
+                    [
+                        "TobiPack_OrnateCeilingCorner_A.Description",
+                        "Place on a wall to create a ceiling above"
+                    ],
+                    [
+                        "TobiPack_LargeBrazier_A.Name",
+                        "Large Brazier"
+                    ],
+                    [
+                        "TobiPack_LargeBrazier_A.Description",
+                        "A Big Brazier"
+                    ]
+                ]
             }
         }
     ]
