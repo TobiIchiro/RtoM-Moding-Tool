@@ -3472,7 +3472,7 @@
                     ],
                     [
                         "MereakPack_SmallMessyWorkbench_A.Description",
-                        "A  small Messy Workbench"
+                        "A small Messy Workbench"
                     ],
                     [
                         "MereakPack_LongShelves_A.Name",
@@ -3537,6 +3537,22 @@
                     [
                         "ZetaPack_WhiteGraniteStairs_A.Description",
                         "White Granite Stairs"
+                    ],
+                    [
+                        "ZetaPack_WhiteGraniteBarrier_A.Name",
+                        "White Granite Barrier"
+                    ],
+                    [
+                        "ZetaPack_WhiteGraniteBarrier_A.Description",
+                        "A short barrier made of granite blocks."
+                    ],
+                    [
+                        "ZetaPack_WhiteGraniteTrimedBarrier_A.Name",
+                        "White Granite Trimed Barrier"
+                    ],
+                    [
+                        "ZetaPack_WhiteGraniteTrimedBarrier_A.Description",
+                        "A short barrier made of granite blocks."
                     ]
                 ]
             },
