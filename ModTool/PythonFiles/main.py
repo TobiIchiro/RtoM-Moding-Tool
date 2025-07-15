@@ -6,6 +6,7 @@ from PySide6.QtWidgets import (
 from jsonHandler import loadJson
 from constructionUI import ConstructionAdderUI
 from constructionUpdater import ConstructionUpdaterUI
+from constructionRestoreUI import ConstructionRestoreUI
 import os
 
 class MainWindow(QMainWindow):
@@ -31,18 +32,22 @@ class MainWindow(QMainWindow):
         constructRecipeAdderTab = ConstructionAdderUI(scriptDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
         self.tabs.addTab(constructRecipeAdderTab, "New Construction Adder")
 
-        #Tab 2: UI More Buildings Mantain Mod
+        #Tab 2: UI Restore Removed Constructions in v1.2
+        constructionRestoreUI = ConstructionRestoreUI(scriptDir)
+        self.tabs.addTab(constructionRestoreUI, "Restore Constructions")
+
+        #Tab 3: UI More Buildings Mantain Mod
         moreBuildingMantainModTab = ConstructionUpdaterUI(scriptDir)
         self.tabs.addTab(moreBuildingMantainModTab, "More Buildings Mantain Mod")
 
-        #Tab 3: UI Adding New Armor Recipes
+        #Tab 4: UI Adding New Armor Recipes
         moreBuildingMantainModTab = QWidget()
         layout = QVBoxLayout()
         layout.addWidget(QLabel("New Armor Adder - Coming Soon"))
         moreBuildingMantainModTab.setLayout(layout)
         self.tabs.addTab(moreBuildingMantainModTab, "New Armor Adder")
 
-        #Tab 4: Custmo Armor Recipes Mantain Mod
+        #Tab 5: Custmo Armor Recipes Mantain Mod
         moreBuildingMantainModTab = QWidget()
         layout = QVBoxLayout()
         layout.addWidget(QLabel("Custmo Armor Recipes Mantain Mod - Coming Soon"))
