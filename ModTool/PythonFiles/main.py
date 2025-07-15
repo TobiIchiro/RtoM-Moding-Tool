@@ -19,10 +19,12 @@ class MainWindow(QMainWindow):
         if getattr(sys, 'frozen', False):
             scriptDir = sys._MEIPASS
             iconPath = os.path.join(scriptDir,"Icon","ToolIcon.ico")
+            dataDir = os.path.join(scriptDir, "Data")
 
         else:
             scriptDir = os.path.dirname(os.path.abspath(__file__))
             iconPath = os.path.join(scriptDir,"..","Icon","ToolIcon.ico")
+            dataDir = os.path.join(scriptDir,"..","Data")
 
         self.setWindowTitle("TobiIchiro Moding Tool")
         self.setWindowIcon(QIcon(iconPath))
@@ -31,9 +33,6 @@ class MainWindow(QMainWindow):
         #Tabs container
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
-
-        
-        dataDir = os.path.abspath(os.path.join(scriptDir,"..","Data"))
         
         #DT_Items, Category
         itemsData = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "Items.json")))
