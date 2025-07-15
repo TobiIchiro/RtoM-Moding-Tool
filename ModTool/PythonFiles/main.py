@@ -3,24 +3,36 @@ from PySide6.QtWidgets import (
     QApplication, QMainWindow, QTabWidget, 
     QWidget, QLabel, QVBoxLayout
     )
+from PySide6.QtGui import QIcon
 from jsonHandler import loadJson
 from constructionUI import ConstructionAdderUI
 from constructionUpdater import ConstructionUpdaterUI
 from constructionRestoreUI import ConstructionRestoreUI
 import os
+import sys
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        #Loading Needed Files
+        if getattr(sys, 'frozen', False):
+            scriptDir = sys._MEIPASS
+            iconPath = os.path.join(scriptDir,"Icon","ToolIcon.ico")
+
+        else:
+            scriptDir = os.path.dirname(os.path.abspath(__file__))
+            iconPath = os.path.join(scriptDir,"..","Icon","ToolIcon.ico")
+
         self.setWindowTitle("TobiIchiro Moding Tool")
+        self.setWindowIcon(QIcon(iconPath))
         self.resize(500,500)
 
         #Tabs container
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
-        #Loading Needed Files
-        scriptDir = os.path.dirname(__file__)
+        
         dataDir = os.path.abspath(os.path.join(scriptDir,"..","Data"))
         
         #DT_Items, Category

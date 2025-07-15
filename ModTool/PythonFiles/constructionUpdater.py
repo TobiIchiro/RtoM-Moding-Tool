@@ -18,7 +18,7 @@ class ConstructionUpdaterUI(QWidget):
         self.setMinimumWidth(500)
         self.setMaximumWidth(500)
 
-        self.scripDir = scriptDir
+        self.scriptDir = scriptDir
 
         self.setUpUI()
 
@@ -28,6 +28,7 @@ class ConstructionUpdaterUI(QWidget):
         self.updaterButton = QPushButton()
         self.updaterButton.setText("Update Mod")
         self.updaterButton.setFixedSize(300,150)
+        self.updaterButton.setEnabled(False)
         self.updaterButton.clicked.connect(self.updateMod)
 
         layout.addWidget(self.updaterButton, alignment=Qt.AlignHCenter)
@@ -36,18 +37,18 @@ class ConstructionUpdaterUI(QWidget):
 
     def updateMod(self):
         #Vanila files from update
-        architecturePath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","UpdateMods","MoreBuildings","Architecture.json"))
-        DT_ConstructionRecipesPath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","UpdateMods","MoreBuildings","DT_ConstructionRecipes.json"))
-        DT_ConstructionsPath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","UpdateMods","MoreBuildings","DT_Constructions.json"))
+        architecturePath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","Architecture.json"))
+        DT_ConstructionRecipesPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","DT_ConstructionRecipes.json"))
+        DT_ConstructionsPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","DT_Constructions.json"))
 
         architectureJson = loadJson(architecturePath)
         DT_ConstructionRecipesJson = loadJson(DT_ConstructionRecipesPath)
         DT_ConstructionsJson = loadJson(DT_ConstructionsPath)
 
         #Files containing new constructions
-        newArchitecturePath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","newObjects","MoreBuildings","Architecture.json"))
-        newDT_ConstructionRecipesPath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","newObjects","MoreBuildings","DT_ConstructionRecipes.json"))
-        newDT_ConstructionsPath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","newObjects","MoreBuildings","DT_Constructions.json"))
+        newArchitecturePath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings","Architecture.json"))
+        newDT_ConstructionRecipesPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings","DT_ConstructionRecipes.json"))
+        newDT_ConstructionsPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings","DT_Constructions.json"))
 
         newArchitectureJson = loadJson(newArchitecturePath)
         newDT_ConstructionRecipesJson = loadJson(newDT_ConstructionRecipesPath)
@@ -72,9 +73,9 @@ class ConstructionUpdaterUI(QWidget):
             DT_ConstructionRecipesJson["Exports"][0]["Table"]["Data"].append(constructionRecipe)
 
         #Generated Mod Files
-        architectureModPath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","UpdateMods","MoreBuildings","moded","Architecture.json"))
-        DT_ConstructionRecipesModPath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","UpdateMods","MoreBuildings","moded","DT_ConstructionRecipes.json"))
-        DT_ConstructionsModPath = os.path.abspath(os.path.join(self.scripDir,"..","Saves","UpdateMods","MoreBuildings","moded","DT_Constructions.json")) 
+        architectureModPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded","Architecture.json"))
+        DT_ConstructionRecipesModPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded","DT_ConstructionRecipes.json"))
+        DT_ConstructionsModPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded","DT_Constructions.json")) 
         
         saveJson(architectureModPath,architectureJson)
         saveJson(DT_ConstructionRecipesModPath,DT_ConstructionRecipesJson)
