@@ -61110,7 +61110,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -72024,7 +72024,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -72588,7 +72588,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -73163,7 +73163,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -90419,7 +90419,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -91558,7 +91558,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -94975,7 +94975,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -95539,7 +95539,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -96678,7 +96678,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -114492,7 +114492,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -131278,7 +131278,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -131842,7 +131842,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -132970,7 +132970,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -133534,7 +133534,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -134662,7 +134662,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -135934,7 +135934,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -137206,7 +137206,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -137842,7 +137842,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -140098,7 +140098,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -141226,7 +141226,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -142354,7 +142354,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -149686,7 +149686,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -150814,7 +150814,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -151378,7 +151378,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -153070,7 +153070,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -153634,7 +153634,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -155326,7 +155326,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -156454,7 +156454,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -157582,7 +157582,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -158710,7 +158710,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -159838,7 +159838,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
@@ -160402,7 +160402,7 @@
                                         "IsZero": false,
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
-                                        "Value": "EMorRecipeUnlockType::Manual"
+                                        "Value": "EMorRecipeUnlockType::DiscoverDependencies"
                                     },
                                     {
                                         "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
