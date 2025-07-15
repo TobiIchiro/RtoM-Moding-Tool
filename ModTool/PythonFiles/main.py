@@ -19,11 +19,15 @@ class MainWindow(QMainWindow):
         if getattr(sys, 'frozen', False):
             scriptDir = sys._MEIPASS
             iconPath = os.path.join(scriptDir,"Icon","ToolIcon.ico")
-
+            dataDir = os.path.join(scriptDir, "Data")
+            execDir = os.path.dirname(sys.executable)
         else:
             scriptDir = os.path.dirname(os.path.abspath(__file__))
             iconPath = os.path.join(scriptDir,"..","Icon","ToolIcon.ico")
-
+            dataDir = os.path.join(scriptDir,"..","Data")
+            execDir = scriptDir
+        print(f"ScriptDir: {scriptDir}")
+        print(f"ExecDir: {execDir}")
         self.setWindowTitle("TobiIchiro Moding Tool")
         self.setWindowIcon(QIcon(iconPath))
         self.resize(500,500)
@@ -31,9 +35,6 @@ class MainWindow(QMainWindow):
         #Tabs container
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
-
-        
-        dataDir = os.path.abspath(os.path.join(scriptDir,"..","Data"))
         
         #DT_Items, Category
         itemsData = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "Items.json")))
@@ -41,15 +42,15 @@ class MainWindow(QMainWindow):
         unlockRequirementsItemsConstructions = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "UnlockRequirementsItemsConstructions.json")))
 
         #Tab 1: UI Adding New Construction Recipes
-        constructRecipeAdderTab = ConstructionAdderUI(scriptDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
+        constructRecipeAdderTab = ConstructionAdderUI(execDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
         self.tabs.addTab(constructRecipeAdderTab, "New Construction Adder")
 
         #Tab 2: UI Restore Removed Constructions in v1.2
-        constructionRestoreUI = ConstructionRestoreUI(scriptDir)
+        constructionRestoreUI = ConstructionRestoreUI(execDir)
         self.tabs.addTab(constructionRestoreUI, "Restore Constructions")
 
         #Tab 3: UI More Buildings Mantain Mod
-        moreBuildingMantainModTab = ConstructionUpdaterUI(scriptDir)
+        moreBuildingMantainModTab = ConstructionUpdaterUI(execDir)
         self.tabs.addTab(moreBuildingMantainModTab, "More Buildings Mantain Mod")
 
         #Tab 4: UI Adding New Armor Recipes
