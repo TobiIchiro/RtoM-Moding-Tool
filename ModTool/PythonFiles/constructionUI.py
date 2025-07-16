@@ -12,13 +12,14 @@ from modUtils import (
 )
 
 class ConstructionAdderUI(QWidget):
-    def __init__(self, scriptDir, Items, categoryTagsData, unlockRequirementsItemsConstructions):
+    def __init__(self, execDir, dataDir, Items, categoryTagsData, unlockRequirementsItemsConstructions):
         super().__init__()
         self.setWindowTitle("New Construction Adder")
         self.setMinimumWidth(500)
         self.setMaximumWidth(500)
 
-        self.scriptDir = scriptDir
+        self.execDir = execDir
+        self.dataDir = dataDir
         
         self.Items = Items
         self.materialsWidgets = []
@@ -196,11 +197,11 @@ class ConstructionAdderUI(QWidget):
         tag = userName + "Pack_" + name.title().replace(" ","")
 
         #Generate Unique tag and save Architecture.json for generating Mod and mantain for future updates
-        uniqueTag = architectureHandle(tag, name, description, self.scriptDir)
+        uniqueTag = architectureHandle(tag, name, description, self.execDir)
         
-        DTConstructionsHandle(uniqueTag, assetPath, categoryTag, self.scriptDir, userName)
+        DTConstructionsHandle(uniqueTag, assetPath, categoryTag, self.execDir, self.dataDir, userName)
 
-        DTConstructionRecipesHandle(uniqueTag, self.scriptDir, categoryKey, materials, self.unlockType, self.unlockRequirementInput.currentText())
+        DTConstructionRecipesHandle(uniqueTag, self.execDir, self.dataDir, categoryKey, materials, self.unlockType, self.unlockRequirementInput.currentText())
         
     
 

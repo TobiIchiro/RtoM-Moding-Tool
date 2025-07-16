@@ -52,13 +52,13 @@ def architectureHandle(tag, name, description, path):
 
         return uniqueTag
 
-def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, userName):
+def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, dataDir,  userName):
         #File paths
         modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_Constructions.json"))
         newPath = os.path.abspath(os.path.join(path,"..","Saves","newObjects","MoreBuildings","DT_Constructions.json"))
 
-        templatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","ConstructionTemplate.json"))
-        importTemplatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","constructionsImportTemplates.json"))
+        templatePath = os.path.abspath(os.path.join(dataDir,"MoreBuildings","ConstructionTemplate.json"))
+        importTemplatePath = os.path.abspath(os.path.join(dataDir,"MoreBuildings","constructionsImportTemplates.json"))
 
         DT_ConstructionsModData = loadJson(modPath)
         DT_ConstructionsNewData = loadJson(newPath)
@@ -126,13 +126,13 @@ def DTConstructionsHandle(uniqueTag, assetPath, categoryTag, path, userName):
         saveJson(modPath, DT_ConstructionsModData)
         saveJson(newPath, DT_ConstructionsNewData)
 
-def DTConstructionRecipesHandle(uniqueTag, path, categoryTag, requiredItems, unlockOption, unlockRequirement):
+def DTConstructionRecipesHandle(uniqueTag, path, dataDir,  categoryTag, requiredItems, unlockOption, unlockRequirement):
         #Needed Files paths
-        recipeTemplatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","ConstructionRecipeTemplate.json"))
-        itemTemplatePath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","ItemTemplate.json"))
-        dummyStructsPath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","DumyStructs.json"))
-        flagsPath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","CategoryFlags.json"))
-        unlockRequirementsPath = os.path.abspath(os.path.join(path,"..","Data","MoreBuildings","UnlockRequirementsStructs.json"))
+        recipeTemplatePath = os.path.abspath(os.path.join(dataDir,"MoreBuildings","ConstructionRecipeTemplate.json"))
+        itemTemplatePath = os.path.abspath(os.path.join(dataDir,"MoreBuildings","ItemTemplate.json"))
+        dummyStructsPath = os.path.abspath(os.path.join(dataDir,"MoreBuildings","DumyStructs.json"))
+        flagsPath = os.path.abspath(os.path.join(dataDir,"MoreBuildings","CategoryFlags.json"))
+        unlockRequirementsPath = os.path.abspath(os.path.join(dataDir,"MoreBuildings","UnlockRequirementsStructs.json"))
 
         #File paths
         modPath = os.path.abspath(os.path.join(path,"..","Saves","mods","MoreBuildings","DT_ConstructionRecipes.json"))

@@ -28,6 +28,8 @@ class MainWindow(QMainWindow):
             execDir = scriptDir
         print(f"ScriptDir: {scriptDir}")
         print(f"ExecDir: {execDir}")
+        print(f"IconDir: {iconPath}")
+        print(f"DataDir: {dataDir}")
         self.setWindowTitle("TobiIchiro Moding Tool")
         self.setWindowIcon(QIcon(iconPath))
         self.resize(500,500)
@@ -42,7 +44,7 @@ class MainWindow(QMainWindow):
         unlockRequirementsItemsConstructions = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "UnlockRequirementsItemsConstructions.json")))
 
         #Tab 1: UI Adding New Construction Recipes
-        constructRecipeAdderTab = ConstructionAdderUI(execDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
+        constructRecipeAdderTab = ConstructionAdderUI(execDir, dataDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
         self.tabs.addTab(constructRecipeAdderTab, "New Construction Adder")
 
         #Tab 2: UI Restore Removed Constructions in v1.2
