@@ -133,5 +133,14 @@
         false,
         false,
         true
+    ],
+    "Scaffolding": [
+        "EConstructionLocation::Base",
+        "EPlacementType::SnapGrid",
+        false,
+        true,
+        false,
+        false,
+        true
     ]
 }
