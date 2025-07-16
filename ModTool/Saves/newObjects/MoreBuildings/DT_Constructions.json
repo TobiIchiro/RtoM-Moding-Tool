@@ -5163,7 +5163,7 @@
                                 "IsZero": false,
                                 "PropertyTagFlags": "None",
                                 "PropertyTagExtensions": "NoExtension",
-                                "Value": -1069
+                                "Value": -1067
                             },
                             {
                                 "$type": "UAssetAPI.PropertyTypes.Objects.SoftObjectPropertyData, UAssetAPI",
@@ -5327,7 +5327,7 @@
                                 "IsZero": false,
                                 "PropertyTagFlags": "None",
                                 "PropertyTagExtensions": "NoExtension",
-                                "Value": -1071
+                                "Value": -1069
                             },
                             {
                                 "$type": "UAssetAPI.PropertyTypes.Objects.SoftObjectPropertyData, UAssetAPI",
@@ -5491,7 +5491,7 @@
                                 "IsZero": false,
                                 "PropertyTagFlags": "None",
                                 "PropertyTagExtensions": "NoExtension",
-                                "Value": -1073
+                                "Value": -1071
                             },
                             {
                                 "$type": "UAssetAPI.PropertyTypes.Objects.SoftObjectPropertyData, UAssetAPI",
@@ -5575,7 +5575,7 @@
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
                                         "Value": [
-                                            "UI.Construction.Category.Advanced.Walls"
+                                            "UI.Construction.Category.Advanced.Ceilings"
                                         ]
                                     }
                                 ]
@@ -5655,7 +5655,7 @@
                                 "IsZero": false,
                                 "PropertyTagFlags": "None",
                                 "PropertyTagExtensions": "NoExtension",
-                                "Value": -1075
+                                "Value": -1073
                             },
                             {
                                 "$type": "UAssetAPI.PropertyTypes.Objects.SoftObjectPropertyData, UAssetAPI",
@@ -5739,7 +5739,7 @@
                                         "PropertyTagFlags": "None",
                                         "PropertyTagExtensions": "NoExtension",
                                         "Value": [
-                                            "UI.Construction.Category.Advanced.Walls"
+                                            "UI.Construction.Category.Advanced.Columns"
                                         ]
                                     }
                                 ]
@@ -5819,7 +5819,7 @@
                                 "IsZero": false,
                                 "PropertyTagFlags": "None",
                                 "PropertyTagExtensions": "NoExtension",
-                                "Value": -1077
+                                "Value": -1075
                             },
                             {
                                 "$type": "UAssetAPI.PropertyTypes.Objects.SoftObjectPropertyData, UAssetAPI",
@@ -6478,7 +6478,7 @@
         {
             "$type": "UAssetAPI.Import, UAssetAPI",
             "ObjectName": "T_UI_BuildIcon_MereakPack_DetailedBaseboard_A",
-            "OuterIndex": -1068,
+            "OuterIndex": -1066,
             "ClassPackage": "/Script/Engine",
             "ClassName": "Texture2D",
             "PackageName": null,
@@ -6496,7 +6496,7 @@
         {
             "$type": "UAssetAPI.Import, UAssetAPI",
             "ObjectName": "T_UI_BuildIcon_MereakPack_NotchedArch_A",
-            "OuterIndex": -1070,
+            "OuterIndex": -1068,
             "ClassPackage": "/Script/Engine",
             "ClassName": "Texture2D",
             "PackageName": null,
@@ -6514,7 +6514,7 @@
         {
             "$type": "UAssetAPI.Import, UAssetAPI",
             "ObjectName": "T_UI_BuildIcon_MereakPack_UnderStairsArch_A",
-            "OuterIndex": -1072,
+            "OuterIndex": -1070,
             "ClassPackage": "/Script/Engine",
             "ClassName": "Texture2D",
             "PackageName": null,
@@ -6532,7 +6532,7 @@
         {
             "$type": "UAssetAPI.Import, UAssetAPI",
             "ObjectName": "T_UI_BuildIcon_MereakPack_FigureHead_B",
-            "OuterIndex": -1074,
+            "OuterIndex": -1072,
             "ClassPackage": "/Script/Engine",
             "ClassName": "Texture2D",
             "PackageName": null,
@@ -6550,7 +6550,7 @@
         {
             "$type": "UAssetAPI.Import, UAssetAPI",
             "ObjectName": "T_UI_BuildIcon_MereakPack_ColumnTrimBase_A",
-            "OuterIndex": -1076,
+            "OuterIndex": -1074,
             "ClassPackage": "/Script/Engine",
             "ClassName": "Texture2D",
             "PackageName": null,
