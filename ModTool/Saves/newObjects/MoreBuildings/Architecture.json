@@ -197,11 +197,11 @@
                     ],
                     [
                         "MereakPack_ThickDarkWoodFloor_A.Name",
-                        "Thick dark wood floor"
+                        "Thick dark wood Ceiling"
                     ],
                     [
                         "MereakPack_ThickDarkWoodFloor_A.Description",
-                        "A Thick dark wood floor"
+                        "A Thick dark wood Ceiling"
                     ],
                     [
                         "MereakPack_FigureHead_A.Name",
@@ -346,6 +346,22 @@
                     [
                         "SeraniPack_DwellingCabinet_C.Description",
                         "An Medium Dwelling Cabinet"
+                    ],
+                    [
+                        "TobiPack_BirdNest_A.Name",
+                        "Bird Nest"
+                    ],
+                    [
+                        "TobiPack_BirdNest_A.Description",
+                        "A Bird Nest that produces Eggs"
+                    ],
+                    [
+                        "TobiPack_BirdNest_B.Name",
+                        "Bird Nest"
+                    ],
+                    [
+                        "TobiPack_BirdNest_B.Description",
+                        "A Bird Nest that produces Feathers"
                     ]
                 ]
             }
