@@ -7,7 +7,6 @@ from PySide6.QtGui import QIcon
 from jsonHandler import loadJson
 from constructionUI import ConstructionAdderUI
 from constructionUpdater import ConstructionUpdaterUI
-from constructionRestoreUI import ConstructionRestoreUI
 import os
 import sys
 
