@@ -47,22 +47,18 @@ class MainWindow(QMainWindow):
         constructRecipeAdderTab = ConstructionAdderUI(execDir, dataDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
         self.tabs.addTab(constructRecipeAdderTab, "New Construction Adder")
 
-        #Tab 2: UI Restore Removed Constructions in v1.2
-        constructionRestoreUI = ConstructionRestoreUI(execDir)
-        self.tabs.addTab(constructionRestoreUI, "Restore Constructions")
-
-        #Tab 3: UI More Buildings Mantain Mod
+        #Tab 2: UI More Buildings Mantain Mod
         moreBuildingMantainModTab = ConstructionUpdaterUI(execDir)
         self.tabs.addTab(moreBuildingMantainModTab, "More Buildings Mantain Mod")
 
-        #Tab 4: UI Adding New Armor Recipes
+        #Tab 3: UI Adding New Armor Recipes
         moreBuildingMantainModTab = QWidget()
         layout = QVBoxLayout()
         layout.addWidget(QLabel("New Armor Adder - Coming Soon"))
         moreBuildingMantainModTab.setLayout(layout)
         self.tabs.addTab(moreBuildingMantainModTab, "New Armor Adder")
 
-        #Tab 5: Custmo Armor Recipes Mantain Mod
+        #Tab 4: Custmo Armor Recipes Mantain Mod
         moreBuildingMantainModTab = QWidget()
         layout = QVBoxLayout()
         layout.addWidget(QLabel("Custmo Armor Recipes Mantain Mod - Coming Soon"))
