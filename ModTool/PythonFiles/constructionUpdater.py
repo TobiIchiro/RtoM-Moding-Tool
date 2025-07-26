@@ -28,58 +28,62 @@ class ConstructionUpdaterUI(QWidget):
         self.updaterButton = QPushButton()
         self.updaterButton.setText("Update Mod")
         self.updaterButton.setFixedSize(300,150)
-        self.updaterButton.setEnabled(False)
+        self.updaterButton.setEnabled(True)
         self.updaterButton.clicked.connect(self.updateMod)
 
         layout.addWidget(self.updaterButton, alignment=Qt.AlignHCenter)
 
         self.setLayout(layout)
 
-    def updateMod(self):
-        #Vanila files from update
-        architecturePath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","Architecture.json"))
-        DT_ConstructionRecipesPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","DT_ConstructionRecipes.json"))
-        DT_ConstructionsPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","DT_Constructions.json"))
+    def buildPath(self, category, fileName):
+        base = {
+            "vanilla": os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings"),
+            "new": os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings"),
+            "moded": os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded")
+        }[category]
+        return os.path.abspath(os.path.join(base, fileName))
 
-        architectureJson = loadJson(architecturePath)
-        DT_ConstructionRecipesJson = loadJson(DT_ConstructionRecipesPath)
-        DT_ConstructionsJson = loadJson(DT_ConstructionsPath)
+    def updateMod(self):
+
+        #Vanila files from update
+        architectureJson = loadJson(self.buildPath("vanilla", "Architecture.json"))
+        DT_ConstructionRecipesJson = loadJson(self.buildPath("vanilla", "DT_ConstructionRecipes.json"))
+        DT_ConstructionsJson = loadJson(self.buildPath("vanilla", "DT_Constructions.json"))
 
         #Files containing new constructions
-        newArchitecturePath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings","Architecture.json"))
-        newDT_ConstructionRecipesPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings","DT_ConstructionRecipes.json"))
-        newDT_ConstructionsPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings","DT_Constructions.json"))
-
-        newArchitectureJson = loadJson(newArchitecturePath)
-        newDT_ConstructionRecipesJson = loadJson(newDT_ConstructionRecipesPath)
-        newDT_ConstructionsJson = loadJson(newDT_ConstructionsPath)
+        newArchitectureJson = loadJson(self.buildPath("new", "Architecture.json"))
+        newDT_ConstructionRecipesJson = loadJson(self.buildPath("new", "DT_ConstructionRecipes.json"))
+        newDT_ConstructionsJson = loadJson(self.buildPath("new", "DT_Constructions.json"))
         
 
         #Apend Architecture
-        for architecture in newArchitectureJson["Exports"][0]["Table"]["Value"]:
-            architectureJson["Exports"][0]["Table"]["Value"].append(architecture)
+        architectureJson["Exports"][0]["Table"]["Value"].extend(newArchitectureJson["Exports"][0]["Table"]["Value"])
+        
         #Apend Constructions
-        for nameMap in newDT_ConstructionsJson["NameMap"]:
-            DT_ConstructionsJson["NameMap"].append(nameMap)
+        vanillaImportsLength = len(DT_ConstructionsJson["Imports"])
+        #Updating imports 2DTextures OuterIndex
+        for i, importObj in enumerate(newDT_ConstructionsJson["Imports"]):
+            if importObj["OuterIndex"] < 0:
+                importObj["OuterIndex"] = -(vanillaImportsLength + abs(importObj["OuterIndex"]) - 1005)
+
+        #Updating icon reference 
         for construction in newDT_ConstructionsJson["Exports"][0]["Table"]["Data"]:
-            DT_ConstructionsJson["Exports"][0]["Table"]["Data"].append(construction)
-        for importObject in newDT_ConstructionsJson["Imports"]:
-            DT_ConstructionsJson["Imports"].append(importObject)
+            for prop in construction["Value"]:
+                if prop["$type"] == "UAssetAPI.PropertyTypes.Objects.ObjectPropertyData, UAssetAPI":
+                    if isinstance(prop.get("Value"), int) and prop["Value"] < 0:
+                        prop["Value"] = -(vanillaImportsLength + abs(prop["Value"]) - 1006)
+        
+        DT_ConstructionsJson["NameMap"].extend(newDT_ConstructionsJson["NameMap"])
+        DT_ConstructionsJson["Exports"][0]["Table"]["Data"].extend(newDT_ConstructionsJson["Exports"][0]["Table"]["Data"])
+        DT_ConstructionsJson["Imports"].extend(newDT_ConstructionsJson["Imports"])
         
         #Append ConstructionRecipes
-        for nameMap in newDT_ConstructionRecipesJson["NameMap"]:
-            DT_ConstructionRecipesJson["NameMap"].append(nameMap)
-        for constructionRecipe in newDT_ConstructionRecipesJson["Exports"][0]["Table"]["Data"]:
-            DT_ConstructionRecipesJson["Exports"][0]["Table"]["Data"].append(constructionRecipe)
+        DT_ConstructionRecipesJson["Exports"][0]["Table"]["Data"].extend(newDT_ConstructionRecipesJson["Exports"][0]["Table"]["Data"])
 
-        #Generated Mod Files
-        architectureModPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded","Architecture.json"))
-        DT_ConstructionRecipesModPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded","DT_ConstructionRecipes.json"))
-        DT_ConstructionsModPath = os.path.abspath(os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded","DT_Constructions.json")) 
-        
-        saveJson(architectureModPath,architectureJson)
-        saveJson(DT_ConstructionRecipesModPath,DT_ConstructionRecipesJson)
-        saveJson(DT_ConstructionsModPath,DT_ConstructionsJson)
+        #Generated Mod Files 
+        saveJson(self.buildPath("moded", "Architecture.json"), architectureJson)
+        saveJson(self.buildPath("moded", "DT_ConstructionRecipes.json"), DT_ConstructionRecipesJson)
+        saveJson(self.buildPath("moded", "DT_Constructions.json"),DT_ConstructionsJson)
 
 
 
