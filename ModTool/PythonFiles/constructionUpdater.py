@@ -86,7 +86,8 @@ class ConstructionUpdaterUI(QWidget):
             "Elder_Archway_Vertical",
             "Elder_Archway_Horizontal_Large",
             "Elder_Wall_Corner_Crown",
-            "Advanced_Stairs_Railing_1m_V2"
+            "Advanced_Stairs_Railing_1m_V2",
+            "Advanced_Bannister_Post_Stone"
         ]
 
         recipeList = data["Exports"][0]["Table"]["Data"]
