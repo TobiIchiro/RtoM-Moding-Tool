@@ -7,6 +7,8 @@ from PySide6.QtGui import QIcon
 from jsonHandler import loadJson
 from constructionUI import ConstructionAdderUI
 from constructionUpdater import ConstructionUpdaterUI
+from armorAdderUI import ArmorAdderUI
+from armorUpdaterUI import ArmorUpdaterUI
 import os
 import sys
 
@@ -41,6 +43,7 @@ class MainWindow(QMainWindow):
         itemsData = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "Items.json")))
         categoryTagsData = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "CategoryTags.json")))
         unlockRequirementsItemsConstructions = loadJson(os.path.abspath(os.path.join(dataDir, "MoreBuildings", "UnlockRequirementsItemsConstructions.json")))
+        unlockRequirementsItemsConstructionsArmor = loadJson(os.path.abspath(os.path.join(dataDir, "MoreArmor", "UnlockRequirementsItemsConstructions.json")))
 
         #Tab 1: UI Adding New Construction Recipes
         constructRecipeAdderTab = ConstructionAdderUI(execDir, dataDir, itemsData, categoryTagsData, unlockRequirementsItemsConstructions)
@@ -51,18 +54,12 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(moreBuildingMantainModTab, "More Buildings Mantain Mod")
 
         #Tab 3: UI Adding New Armor Recipes
-        moreBuildingMantainModTab = QWidget()
-        layout = QVBoxLayout()
-        layout.addWidget(QLabel("New Armor Adder - Coming Soon"))
-        moreBuildingMantainModTab.setLayout(layout)
-        self.tabs.addTab(moreBuildingMantainModTab, "New Armor Adder")
+        armorAdderTab = ArmorAdderUI(execDir, itemsData, unlockRequirementsItemsConstructionsArmor)
+        self.tabs.addTab(armorAdderTab, "New Armor Adder")
 
-        #Tab 4: Custmo Armor Recipes Mantain Mod
-        moreBuildingMantainModTab = QWidget()
-        layout = QVBoxLayout()
-        layout.addWidget(QLabel("Custmo Armor Recipes Mantain Mod - Coming Soon"))
-        moreBuildingMantainModTab.setLayout(layout)
-        self.tabs.addTab(moreBuildingMantainModTab, "Custmo Armor Recipes Mantain Mod")
+        #Tab 4: Custom Armor Recipes Mantain Mod
+        armorUpdaterTab = ArmorUpdaterUI(execDir)
+        self.tabs.addTab(armorUpdaterTab, "Armor Recipes Mantain Mod")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
