@@ -68,28 +68,40 @@ class ConstructionAdderUI(QWidget):
 
         # Text Fields
         self.userNameInput = QLineEdit()
+        self.userNameInput.setToolTip("Enter the requester user name")
+        self.userNameInput.setPlaceholderText("Enter your user name (e.g., Tobi)")
         self.nameInput = QLineEdit(maxLength=30)
+        self.nameInput.setToolTip("Enter the construction name (30 characters max)")
+        self.nameInput.setPlaceholderText("Enter the construction name (e.g., Dark Wood Floor)")
         self.constructionTag = QLineEdit()
         self.constructionTag.setEnabled(False)
         self.constructionTag.setPlaceholderText("")
         self.descriptionInput = QLineEdit(maxLength=60)
+        self.descriptionInput.setToolTip("Enter the construction description (60 characters max)")
+        self.descriptionInput.setPlaceholderText("Enter the construction description (e.g., A floor made of dark wood)")
         self.assetPathInput = QLineEdit()
+        self.assetPathInput.setPlaceholderText("/Game/Items/Breakables/BreakableContainers/BP_BrewContainer")
+        self.assetPathInput.setToolTip("Enter the asset path")
 
         # Category tags
         self.categoryMainInput = QComboBox()
         self.categoryMainInput.addItems(self.mainCategories)
         self.categoryMainInput.currentTextChanged.connect(self.updateSubCategories)
+        self.categoryMainInput.setToolTip("Select the main category (e.g., Wood & Stone, Granite, etc.)")
 
         self.categorySubInput = QComboBox()
         self.updateSubCategories(self.categoryMainInput.currentText())
+        self.categorySubInput.setToolTip("Select the sub category (e.g., Floors, Walls, etc.)")
 
         # Required Materials
         self.materialsLayout = QVBoxLayout()
 
         buttonsLayout = QHBoxLayout()
         self.addMaterialButton = QPushButton("Add Material")
+        self.addMaterialButton.setToolTip("Add a new material to the construction")
         self.removeMaterialButton = QPushButton("Remove Material")
-        
+        self.removeMaterialButton.setToolTip("Remove the selected material from the construction")
+
         self.addMaterialButton.clicked.connect(self.addMaterial)
         self.removeMaterialButton.clicked.connect(self.removeMaterial)
 
@@ -98,6 +110,7 @@ class ConstructionAdderUI(QWidget):
 
         # Unlocked conditions
         self.unlockTConditionsGroupBox = QGroupBox("Unlock Conditions")
+        self.unlockTConditionsGroupBox.setToolTip("Select the unlock conditions for the construction")
         self.unlockConditionsLayout = QVBoxLayout()
         self.unlockButtonsLayout = QHBoxLayout()
 
@@ -105,9 +118,10 @@ class ConstructionAdderUI(QWidget):
 
         self.constructionRadioButton = QRadioButton("Discover Construction")
         self.constructionRadioButton.clicked.connect(self.updateUnlockConstructionRequirements)
+        self.constructionRadioButton.setToolTip("Unlock the construction by building a construction in game")
         self.materialRadioButton = QRadioButton("Discover Item")
         self.materialRadioButton.clicked.connect(self.updateUnlockItemsRequirements)
-        
+        self.materialRadioButton.setToolTip("Unlock the construction by discovering an item in game")
         self.materialRadioButton.setChecked(True)
 
         self.unlockConditionsButtonGroup.addButton(self.materialRadioButton)
@@ -122,6 +136,7 @@ class ConstructionAdderUI(QWidget):
         # Buttons
         self.saveButton = QPushButton("Save Construction")
         self.saveButton.clicked.connect(self.saveConstruction)
+        self.saveButton.setToolTip("Save the construction recipe with the provided details")
 
         # Form Layout
         formLayout = QFormLayout()

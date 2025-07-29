@@ -30,12 +30,14 @@ class ConstructionUpdaterUI(QWidget):
         self.restoreButton.setFixedSize(300,150)
         self.restoreButton.clicked.connect(self.restoreConstructions)
         self.restoreButton.setEnabled(True)
+        self.restoreButton.setToolTip("This button will restore the constructions removed in the 1.2 update.")
 
         self.updaterButton = QPushButton()
         self.updaterButton.setText("Update Mod")
         self.updaterButton.setFixedSize(300,150)
         self.updaterButton.setEnabled(False)
         self.updaterButton.clicked.connect(self.updateMod)
+        self.updaterButton.setToolTip("This button will update the mod with the new constructions.")
 
         layout.addWidget(self.restoreButton, alignment=Qt.AlignHCenter)
         layout.addWidget(self.updaterButton, alignment=Qt.AlignHCenter)

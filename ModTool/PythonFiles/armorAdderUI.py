@@ -47,10 +47,12 @@ class ArmorAdderUI(QWidget):
         layout = QVBoxLayout()
 
         self.ArmorComboBox = QComboBox()
+        self.ArmorComboBox.setToolTip("Select the armor you want to add a recipe for")
         self.ArmorComboBox.addItems([list(d.keys())[0] for d in self.missingArmor])
 
         # Crafting Stations
         self.CraftingStationsGroup = QGroupBox("Crafting Stations")
+        self.CraftingStationsGroup.setToolTip("Select the crafting stations where the armor can be crafted")
         self.CraftingStationsLayout = QGridLayout()
 
         self.craftingStationsCheckBoxes = []
@@ -70,7 +72,9 @@ class ArmorAdderUI(QWidget):
 
         buttonsLayout = QHBoxLayout()
         self.addMaterialButton = QPushButton("Add Material")
+        self.addMaterialButton.setToolTip("Add a new material to the armor recipe")
         self.removeMaterialButton = QPushButton("Remove Material")
+        self.removeMaterialButton.setToolTip("Remove the last added material from the armor recipe")
         
         self.addMaterialButton.clicked.connect(self.addMaterial)
         self.removeMaterialButton.clicked.connect(self.removeMaterial)
@@ -80,6 +84,7 @@ class ArmorAdderUI(QWidget):
 
         # Unlocked conditions
         self.unlockTConditionsGroupBox = QGroupBox("Unlock Conditions")
+        self.unlockTConditionsGroupBox.setToolTip("Select the unlock conditions for the armor")
         self.unlockConditionsLayout = QVBoxLayout()
         self.unlockButtonsLayout = QHBoxLayout()
 
@@ -87,8 +92,10 @@ class ArmorAdderUI(QWidget):
 
         self.constructionRadioButton = QRadioButton("Discover Construction")
         self.constructionRadioButton.clicked.connect(self.updateUnlockConstructionRequirements)
+        self.constructionRadioButton.setToolTip("Unlock the armor by building a construction in game")
         self.materialRadioButton = QRadioButton("Discover Item")
         self.materialRadioButton.clicked.connect(self.updateUnlockItemsRequirements)
+        self.materialRadioButton.setToolTip("Unlock the armor by discovering an item in game")
         
         self.materialRadioButton.setChecked(True)
 
@@ -101,6 +108,7 @@ class ArmorAdderUI(QWidget):
         #Save Button
         self.saveButton = QPushButton("Save Armor")
         self.saveButton.clicked.connect(self.saveArmor)
+        self.saveButton.setToolTip("Save the armor recipe with the provided details")
 
 
         formLayout = QFormLayout()
