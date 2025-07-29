@@ -58,7 +58,7 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(armorAdderTab, "New Armor Adder")
 
         #Tab 4: Custom Armor Recipes Mantain Mod
-        armorUpdaterTab = ArmorUpdaterUI(execDir)
+        armorUpdaterTab = ArmorUpdaterUI(execDir, dataDir)
         self.tabs.addTab(armorUpdaterTab, "Armor Recipes Mantain Mod")
 
 if __name__ == "__main__":
