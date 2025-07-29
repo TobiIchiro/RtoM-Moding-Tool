@@ -21,7 +21,7 @@ class ConstructionAdderUI(QWidget):
         self.execDir = execDir
         self.dataDir = dataDir
         
-        self.Items = Items
+        self.items = Items
         self.materialsWidgets = []
 
         self.categoryTagsRaw = categoryTagsData
@@ -60,7 +60,9 @@ class ConstructionAdderUI(QWidget):
         # Text Fields
         self.userNameInput = QLineEdit()
         self.nameInput = QLineEdit(maxLength=30)
-        self.constructionTag = QLabel()
+        self.constructionTag = QLineEdit()
+        self.constructionTag.setEnabled(False)
+        self.constructionTag.setPlaceholderText("")
         self.descriptionInput = QLineEdit(maxLength=60)
         self.assetPathInput = QLineEdit()
 
@@ -74,8 +76,16 @@ class ConstructionAdderUI(QWidget):
 
         # Required Materials
         self.materialsLayout = QVBoxLayout()
+
+        buttonsLayout = QHBoxLayout()
         self.addMaterialButton = QPushButton("Add Material")
+        self.removeMaterialButton = QPushButton("Remove Material")
+        
         self.addMaterialButton.clicked.connect(self.addMaterial)
+        self.removeMaterialButton.clicked.connect(self.removeMaterial)
+
+        buttonsLayout.addWidget(self.addMaterialButton)
+        buttonsLayout.addWidget(self.removeMaterialButton)
 
         # Unlocked conditions
         self.unlockTConditionsGroupBox = QGroupBox("Unlock Conditions")
@@ -101,7 +111,7 @@ class ConstructionAdderUI(QWidget):
         #self.updateUnlockRequirements()
 
         # Buttons
-        self.saveButton = QPushButton("Save")
+        self.saveButton = QPushButton("Save Construction")
         self.saveButton.clicked.connect(self.saveConstruction)
 
         # Form Layout
@@ -117,7 +127,8 @@ class ConstructionAdderUI(QWidget):
         layout.addLayout(formLayout)
         layout.addWidget(QLabel("Materials (max 6):"))
         layout.addLayout(self.materialsLayout)
-        layout.addWidget(self.addMaterialButton)
+        layout.addLayout(buttonsLayout)
+        
 
         self.unlockButtonsLayout.addWidget(self.materialRadioButton)
         self.unlockButtonsLayout.addWidget(self.constructionRadioButton)
@@ -140,23 +151,33 @@ class ConstructionAdderUI(QWidget):
         materialLayout = QHBoxLayout()
 
         materialCategoryInput = QComboBox()
-        materialCategoryInput.addItems(list(self.Items.keys()))
+        materialCategoryInput.addItems(list(self.items.keys()))
 
         materialNameInput = QComboBox()
         materialNameInput.setEditable(True)
 
+        visibleToTag = {}
+
         def updateItemList(category):
-            materials = self.Items.get(category, [])
+            tags = self.items.get(category, {})
             materialNameInput.clear()
-            materialNameInput.addItems(materials)
-            completer = QCompleter(materials)
+            visibleToTag.clear()
+
+            displayNames = []
+            for tag, name in tags.items():
+                visibleToTag[name] = tag
+                displayNames.append(name)
+            
+            displayNames.sort()  #Sort alphabetically
+            materialNameInput.addItems(displayNames)
+
+            completer = QCompleter(displayNames)
             completer.setFilterMode(Qt.MatchContains)
             completer.setCaseSensitivity(Qt.CaseInsensitive)
             materialNameInput.setCompleter(completer)
 
         materialCategoryInput.currentTextChanged.connect(updateItemList)
         updateItemList(materialCategoryInput.currentText())
-        
 
         countInput = QSpinBox()
         countInput.setMinimum(1)
@@ -168,13 +189,33 @@ class ConstructionAdderUI(QWidget):
         materialLayout.addWidget(countInput)
 
         self.materialsLayout.addLayout(materialLayout)
-        self.materialsWidgets.append((materialNameInput,countInput))
+        self.materialsWidgets.append((materialNameInput,countInput, visibleToTag))
     
+    def removeMaterial(self):
+        if len(self.materialsWidgets) <= 1:
+            QMessageBox.warning(self, "Minimum Materials", "You must have at least one material")
+            return
+        lastMaterialIndex = self.materialsLayout.count() - 1
+        lastLayoutItem = self.materialsLayout.itemAt(lastMaterialIndex)
+        
+        if lastLayoutItem is not None:
+            layout = lastLayoutItem.layout()
+            if layout is not None:
+                while layout.count():
+                    item = layout.takeAt(0)
+                    widget = item.widget()
+                    if widget is not None:
+                        widget.setParent(None)
+            self.materialsLayout.removeItem(layout)
+        
+        self.materialsWidgets.pop()
+        
     def saveConstruction(self):
         materials = []
-        for nameWidget, countWidget in self.materialsWidgets:
+        for nameWidget, countWidget, visibleToTag in self.materialsWidgets:
             if isinstance(nameWidget,QComboBox):
-                materialName = nameWidget.currentText().strip()
+                visibleName = nameWidget.currentText().strip()
+                materialName = visibleToTag.get(visibleName, visibleName)
                 count = countWidget.value()
 
                 '''
@@ -198,6 +239,7 @@ class ConstructionAdderUI(QWidget):
 
         #Generate Unique tag and save Architecture.json for generating Mod and mantain for future updates
         uniqueTag = architectureHandle(tag, name, description, self.execDir)
+        self.constructionTag.setText(uniqueTag)
         
         DTConstructionsHandle(uniqueTag, assetPath, categoryTag, self.execDir, self.dataDir, userName)
 
