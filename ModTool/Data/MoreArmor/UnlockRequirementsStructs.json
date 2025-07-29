@@ -1,5 +1,5 @@
 {
-    "DefaultRequiredMaterials": {
+    "UnlockRequiredItems": {
         "$type": "UAssetAPI.PropertyTypes.Objects.ArrayPropertyData, UAssetAPI",
         "ArrayType": "StructProperty",
         "Name": "UnlockRequiredItems",
