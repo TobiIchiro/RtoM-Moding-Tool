@@ -29,7 +29,7 @@ class ArmorUpdaterUI(QWidget):
         self.restoreBWGButton = QPushButton()
         self.restoreBWGButton.setText("Restore Shayar, Amzul and Masharuz armors")
         self.restoreBWGButton.setFixedSize(300,150)
-        self.restoreBWGButton.setEnabled(True)
+        self.restoreBWGButton.setEnabled(False)
         self.restoreBWGButton.setToolTip("This button will restore the recipes for Shayar, Amzul and Masharuz armors.")
         self.restoreBWGButton.clicked.connect(self.restoreBWG)
 
