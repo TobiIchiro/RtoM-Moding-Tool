@@ -54,7 +54,7 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(moreBuildingMantainModTab, "More Buildings Mantain Mod")
 
         #Tab 3: UI Adding New Armor Recipes
-        armorAdderTab = ArmorAdderUI(execDir, itemsData, unlockRequirementsItemsConstructionsArmor)
+        armorAdderTab = ArmorAdderUI(execDir, dataDir, itemsData, unlockRequirementsItemsConstructionsArmor)
         self.tabs.addTab(armorAdderTab, "New Armor Adder")
 
         #Tab 4: Custom Armor Recipes Mantain Mod

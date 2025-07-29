@@ -8,17 +8,22 @@ from PySide6.QtCore import Qt
 import sys
 
 from jsonHandler import (loadJson, saveJson)
+from armorModUtils import (missingArmorRecipes, DTItemRecipesHandle)
 
 import os
 
 class ArmorAdderUI(QWidget):
-    def __init__(self, scriptDir, items, unlockRequirementsItemsConstructions):
+    def __init__(self, execDir, scriptDir, items, unlockRequirementsItemsConstructions):
         super().__init__()
         self.setWindowTitle("More Armor Mod Updater")
         self.setMinimumWidth(500)
         self.setMaximumWidth(500)
 
         self.scriptDir = scriptDir
+        self.execDir = execDir
+
+        self.missingArmor = missingArmorRecipes(self.scriptDir)
+
         self.items = items
         self.materialsWidgets = []
         self.craftingStations = {
@@ -42,6 +47,7 @@ class ArmorAdderUI(QWidget):
         layout = QVBoxLayout()
 
         self.ArmorComboBox = QComboBox()
+        self.ArmorComboBox.addItems([list(d.keys())[0] for d in self.missingArmor])
 
         # Crafting Stations
         self.CraftingStationsGroup = QGroupBox("Crafting Stations")
@@ -210,4 +216,36 @@ class ArmorAdderUI(QWidget):
             self.unlockRequirementInput.addItem(name)
     
     def saveArmor(self):
-        pass
+        if not any(cb.isChecked() for cb in self.craftingStationsCheckBoxes):
+            QMessageBox.warning(self, "No Crafting Station Selected", "Please select at least one crafting station.")
+            return
+        armorName = self.ArmorComboBox.currentText()
+        armorTag = self.missingArmor[self.ArmorComboBox.currentIndex()].get(armorName, None)
+
+        materials = []
+        for nameWidget, countWidget, visibleToTag in self.materialsWidgets:
+            if isinstance(nameWidget,QComboBox):
+                visibleName = nameWidget.currentText().strip()
+                materialName = visibleToTag.get(visibleName, visibleName)
+                count = countWidget.value()
+
+                '''
+                if materialName not in itemlist
+                    QMessageBox.warning(self,"Invalid Material", "f"'{materialName}' is not a valid material)
+                '''
+                materials.append((materialName,count))
+        
+        craftingStations = [
+            tag for tag, name in self.craftingStations.items()
+            if any(cb.isChecked() and cb.text() == name for cb in self.craftingStationsCheckBoxes)
+        ]
+        selectedName = self.unlockRequirementInput.currentText()
+        unlockRequirement = self.visibleUnlockTagMap.get(selectedName, selectedName)
+
+        DTItemRecipesHandle(self.execDir, self.scriptDir, armorTag, craftingStations, materials, self.unlockType, unlockRequirement)
+
+
+        self.missingArmor = missingArmorRecipes(self.scriptDir)
+        self.ArmorComboBox.clear()
+        self.ArmorComboBox.addItems([list(d.keys())[0] for d in self.missingArmor])
+        
