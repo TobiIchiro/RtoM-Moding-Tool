@@ -47,12 +47,21 @@ class ConstructionAdderUI(QWidget):
     def updateUnlockItemsRequirements(self):
         self.unlockType = "UnlockRequiredItems"
         self.unlockRequirementInput.clear()
-        self.unlockRequirementInput.addItems(self.unlockRequirements.get(self.unlockType,[]))
+        self.visibleUnlockTagMap = {}
+        tagToName = self.unlockRequirements.get(self.unlockType, {})
+        for tag, name in tagToName.items():
+            self.visibleUnlockTagMap[name] = tag
+            self.unlockRequirementInput.addItem(name)
+        
 
     def updateUnlockConstructionRequirements(self):
         self.unlockType = "UnlockRequiredConstructions"
         self.unlockRequirementInput.clear()
-        self.unlockRequirementInput.addItems(self.unlockRequirements.get(self.unlockType,[]))
+        self.visibleUnlockTagMap = {}
+        tagToName = self.unlockRequirements.get(self.unlockType, {})
+        for tag, name in tagToName.items():
+            self.visibleUnlockTagMap[name] = tag
+            self.unlockRequirementInput.addItem(name)
 
     def setupUi(self):
         layout = QVBoxLayout()
@@ -242,8 +251,10 @@ class ConstructionAdderUI(QWidget):
         self.constructionTag.setText(uniqueTag)
         
         DTConstructionsHandle(uniqueTag, assetPath, categoryTag, self.execDir, self.dataDir, userName)
+        selectedName = self.unlockRequirementInput.currentText()
+        unlockRequirement = self.visibleUnlockTagMap.get(selectedName, selectedName)
 
-        DTConstructionRecipesHandle(uniqueTag, self.execDir, self.dataDir, categoryKey, materials, self.unlockType, self.unlockRequirementInput.currentText())
+        DTConstructionRecipesHandle(uniqueTag, self.execDir, self.dataDir, categoryKey, materials, self.unlockType, unlockRequirement)
         
     
 
