@@ -116,7 +116,14 @@ class ArmorUpdaterUI(QWidget):
         This function is not implemented yet.
         """
         sandboxExclusiveItemsList = [
-
+            "Spear_1h_t1_TU2", #Iron Spear
+            "WarAxe_1h_t2", #Steel War Axe
+            "WarAxe_1h_t3", #First Age Battle Axe
+            "Battleaxe_2h_t2", #Belegost War Axe
+            "Halberd_2h_t2", #Khazâd Army Halberd
+            "Sword_2h_t2", #Khazâd Army Greatsword
+            "Battleaxe_2h_t4", #Barôkamlut
+            "FamousElvenSword", #Dagamarth
         ]
         sandboxExclusiveArmorList = [
             "Amazing_Set_HelmetArmor", #Gatherer’s Hat
