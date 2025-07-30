@@ -55,12 +55,10 @@ class MainWindow(QMainWindow):
 
         #Tab 3: UI Adding New Armor Recipes
         armorAdderTab = ArmorAdderUI(execDir, dataDir, itemsData, unlockRequirementsItemsConstructionsArmor)
-        armorAdderTab.setEnabled(False)  # Disable until implemented
         self.tabs.addTab(armorAdderTab, "New Armor Adder")
 
         #Tab 4: Custom Armor Recipes Mantain Mod
         armorUpdaterTab = ArmorUpdaterUI(execDir, dataDir)
-        armorUpdaterTab.setEnabled(False)  # Disable until implemented
         self.tabs.addTab(armorUpdaterTab, "Armor Recipes Mantain Mod")
 
 if __name__ == "__main__":
