@@ -109,10 +109,10 @@ class ConstructionUpdaterUI(QWidget):
 
     def updateMod(self):
 
-        #Vanila files from update
-        architectureJson = loadJson(self.buildPath("vanilla", "Architecture.json"))
-        DT_ConstructionRecipesJson = loadJson(self.buildPath("vanilla", "DT_ConstructionRecipes.json"))
-        DT_ConstructionsJson = loadJson(self.buildPath("vanilla", "DT_Constructions.json"))
+        #Moded files after restoring constructions
+        architectureJson = loadJson(self.buildPath("moded", "Architecture.json"))
+        DT_ConstructionRecipesJson = loadJson(self.buildPath("moded", "DT_ConstructionRecipes.json"))
+        DT_ConstructionsJson = loadJson(self.buildPath("moded", "DT_Constructions.json"))
 
         #Files containing new constructions
         newArchitectureJson = loadJson(self.buildPath("new", "Architecture.json"))
