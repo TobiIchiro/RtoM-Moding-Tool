@@ -136,3 +136,29 @@ def unlockConditionsHandler(itemRecipeTemplate, unlockOption, unlockRequirement,
         unlockRequiredConstruction["Value"][0]["Value"][0]["Value"] = unlockRequirement
         itemRecipeTemplate["Value"][12]["Value"][3] = dummyStructs["UnlockRequiredItems"]
         itemRecipeTemplate["Value"][12]["Value"][4] = unlockRequiredConstruction 
+
+
+def sandboxExclusiveItemsListHandler():
+    sandboxExclusiveItemsList = [
+            {"Tag":"Spear_1h_t1_TU2", "UnlockOption":"UnlockRequiredConstructions", "UnlockRequirement":"CraftingStation_BasicForge"}, #Iron Spear
+            {"Tag":"WarAxe_1h_t2", "UnlockOption":"", "UnlockRequirement":""}, #Steel War Axe
+            {"Tag":"WarAxe_1h_t3", "UnlockOption":"", "UnlockRequirement":""}, #First Age Battle Axe
+            {"Tag":"Battleaxe_2h_t2", "UnlockOption":"", "UnlockRequirement":""}, #Belegost War Axe
+            {"Tag":"Halberd_2h_t2", "UnlockOption":"", "UnlockRequirement":""}, #Khazâd Army Halberd
+            {"Tag":"Sword_2h_t2", "UnlockOption":"", "UnlockRequirement":""}, #Khazâd Army Greatsword
+            {"Tag":"Battleaxe_2h_t4", "UnlockOption":"", "UnlockRequirement":""}, #Barôkamlut
+            {"Tag":"FamousElvenSword", "UnlockOption":"", "UnlockRequirement":""}, #Dagamarth
+            {"Tag":"Amazing_Set_HelmetArmor", "UnlockOption":"", "UnlockRequirement":""}, #Gatherer’s Hat
+            {"Tag":"Wonderful_Set_HelmetArmor", "UnlockOption":"", "UnlockRequirement":""}, #Wolf Skin Hat
+            {"Tag":"SouthernmostFireProof_Set_HelmetArmor", "UnlockOption":"", "UnlockRequirement":""}, #Spiked Helmet
+            {"Tag":"BlueMountainsHunter_Set_TorsoArmor", "UnlockOption":"", "UnlockRequirement":""}, #Blue Mountains Hunter's Armor
+            {"Tag":"BlueMountainsHunter_Set_BootsArmor", "UnlockOption":"", "UnlockRequirement":""}, #Blue Mountains Hunter’s Boots
+            {"Tag":"RangeBonus_Set_GlovesArmor", "UnlockOption":"", "UnlockRequirement":""}, #Blue Mountains Hunter’s Gloves
+            {"Tag":"AntiColdTorso", "UnlockOption":"", "UnlockRequirement":""}, #Grey Mountain Overcoat
+            {"Tag":"AntiColdBoots", "UnlockOption":"", "UnlockRequirement":""}, #Grey Mountains Boots
+            {"Tag":"AntiColdGloves", "UnlockOption":"", "UnlockRequirement":""}, #Grey Mountain Gloves
+            {"Tag":"AntiColdHelm", "UnlockOption":"", "UnlockRequirement":""}, #Grey Mountain Helmet
+            {"Tag":"Nogrod_Set_TorsoArmor", "UnlockOption":"", "UnlockRequirement":""}, #Nogrod Armor,
+            {"Tag":"Nogrod_Set_GlovesArmor", "UnlockOption":"", "UnlockRequirement":""} #Nogrod Gloves
+        ]
+    return sandboxExclusiveItemsList

@@ -8,7 +8,10 @@ from PySide6.QtCore import Qt
 import sys
 
 from jsonHandler import (loadJson, saveJson)
-
+from armorModUtils import (
+    unlockConditionsHandler,
+    sandboxExclusiveItemsListHandler
+)
 import os
 import copy
 import re
@@ -115,30 +118,7 @@ class ArmorUpdaterUI(QWidget):
         Unlock the Sandbox exclusive items recipes in Campaign mode.
         This function is not implemented yet.
         """
-        sandboxExclusiveItemsList = [
-            "Spear_1h_t1_TU2", #Iron Spear
-            "WarAxe_1h_t2", #Steel War Axe
-            "WarAxe_1h_t3", #First Age Battle Axe
-            "Battleaxe_2h_t2", #Belegost War Axe
-            "Halberd_2h_t2", #Khazâd Army Halberd
-            "Sword_2h_t2", #Khazâd Army Greatsword
-            "Battleaxe_2h_t4", #Barôkamlut
-            "FamousElvenSword", #Dagamarth
-        ]
-        sandboxExclusiveArmorList = [
-            "Amazing_Set_HelmetArmor", #Gatherer’s Hat
-            "Wonderful_Set_HelmetArmor", #Wolf Skin Hat
-            "SouthernmostFireProof_Set_HelmetArmor", #Spiked Helmet
-            "BlueMountainsHunter_Set_TorsoArmor", #Blue Mountains Hunter's Armor
-            "BlueMountainsHunter_Set_BootsArmor", #Blue Mountains Hunter’s Boots
-            "RangeBonus_Set_GlovesArmor", #Blue Mountains Hunter’s Gloves
-            "AntiColdTorso", #Grey Mountain Overcoat
-            "AntiColdBoots", #Grey Mountains Boots
-            "AntiColdGloves", #Grey Mountain Gloves
-            "AntiColdHelm", #Grey Mountain Helmet
-            "Nogrod_Set_TorsoArmor", #Nogrod Armor,
-            "Nogrod_Set_GlovesArmor", #Nogrod Gloves
-        ]
+        sandboxExclusiveItemsList = sandboxExclusiveItemsListHandler()
 
         #Step 1: Load Json files
         #Step 2: Check for every sandbox exclusive item in the DT_ItemRecipes.json
