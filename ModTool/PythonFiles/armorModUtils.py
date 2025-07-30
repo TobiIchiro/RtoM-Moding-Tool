@@ -6,14 +6,14 @@ import os
 import copy
 
 
-def missingArmorRecipes(scriptDir):
+def missingArmorRecipes(scriptDir, execDir):
     """
     Check if the armor recipes are missing in the DT_ItemRecipes.json file.
     Returns:
         list: A list of missing armor recipes.
     """
-    dtItemRecipesPath = os.path.join(scriptDir, "..", "Saves", "UpdateMods","MoreArmor", "DT_ItemRecipes.json")
-    newDtItemRecipesPath = os.path.join(scriptDir, "..", "Saves", "newObjects", "MoreArmor", "DT_ItemRecipes.json")
+    dtItemRecipesPath = os.path.join(execDir, "..", "Saves", "UpdateMods","MoreArmor", "DT_ItemRecipes.json")
+    newDtItemRecipesPath = os.path.join(execDir, "..", "Saves", "newObjects", "MoreArmor", "DT_ItemRecipes.json")
     dtArmorPath = os.path.join(scriptDir, "..", "Data", "MoreArmor", "Armor.json")
     missingArmorList = []
 
@@ -69,25 +69,63 @@ def DTItemRecipesHandle(path, dataDir, armorTag, craftingStations, materials, un
     itemRecipeTemplate["Value"][0]["Value"][0]["Value"] = f'Armor.{armorTag}'
     
     #Handle crafting stations
+    craftingStationArray = craftingStationsArrayHandler(craftingStations, craftingStationTemplate)
+    itemRecipeTemplate["Value"][3]["Value"] = craftingStationArray 
+
+    #Handle required materials to craft
+    itemArray = craftingMaterialsHandler(materials, requiredMaterialTemplate)
+    itemRecipeTemplate["Value"][8]["Value"] = itemArray
+
+    #Handle unlock conditions
+    unlockConditionsHandler(itemRecipeTemplate, unlockOption, unlockRequirement, unlockRequirementsStructs, dummyStructs)
+
+    #Add the new item recipe to the DT_ItemRecipes
+    newDT_ItemRecipes["NameMap"].append(armorTag)
+    newDT_ItemRecipes["NameMap"].append(f'Armor.{armorTag}')
+    newDT_ItemRecipes["Exports"][0]["Table"]["Data"].append(itemRecipeTemplate)
+
+    saveJson(newArmorRecipesPath, newDT_ItemRecipes)
+
+def craftingStationsArrayHandler(craftingStations, craftingStationTemplate):
+    """
+    Creates a crafting stations list
+    Args:
+        craftingStations (list): craftingStations where item or armor can be crafted
+        craftingStationTemplate (dict): Template for CraftingStation
+    """
     craftingStationArray = []
     for craftingStation in craftingStations:
         newCraftingStation = copy.deepcopy(craftingStationTemplate)
         newCraftingStation["Value"][0]["Value"] = craftingStation
         craftingStationArray.append(newCraftingStation)
+    
+    return craftingStationArray
 
-    itemRecipeTemplate["Value"][3]["Value"] = craftingStationArray
-
-    #Handle required materials to craft
+def craftingMaterialsHandler(materials, requiredMaterialTemplate):
+    """
+    Creates a list of required materials for crafting item or armor
+    Args: 
+        materials (list): required materials for crafting item or armor
+        requiredMaterialTemplate (dict): Template of the structure for the required material
+    """
     itemArray = []
     for item in materials:
         newItem = copy.deepcopy(requiredMaterialTemplate)
         newItem["Value"][0]["Value"][0]["Value"] = item[0]
         newItem["Value"][2]["Value"] = item[1]
         itemArray.append(newItem)
+    
+    return itemArray
 
-    itemRecipeTemplate["Value"][8]["Value"] = itemArray
-
-    #Handle unlock conditions
+def unlockConditionsHandler(itemRecipeTemplate, unlockOption, unlockRequirement, unlockRequirementsStructs, dummyStructs):
+    """
+    Modifies unlock conditions based on selected option
+    Args:
+        itemRecipeTemplate (dict): Template to modify
+        unlockOption (str): UnlockRequiredItems" or "UnlockRequiredConstructions"
+        unlockRequirement (str): Requieremnt to unlock, can be Item or Construction
+        dummyStructs (dict): Empty Structs for not used fields
+    """
     if unlockOption == "UnlockRequiredItems":
         unlockRequiredItems = unlockRequirementsStructs["UnlockRequiredItems"].copy()
         unlockRequiredItems["Value"][0]["Value"][0]["Value"] = unlockRequirement
@@ -97,11 +135,4 @@ def DTItemRecipesHandle(path, dataDir, armorTag, craftingStations, materials, un
         unlockRequiredConstruction = unlockRequirementsStructs["UnlockRequiredConstructions"].copy()
         unlockRequiredConstruction["Value"][0]["Value"][0]["Value"] = unlockRequirement
         itemRecipeTemplate["Value"][12]["Value"][3] = dummyStructs["UnlockRequiredItems"]
-        itemRecipeTemplate["Value"][12]["Value"][4] = unlockRequiredConstruction
-
-    #Add the new item recipe to the DT_ItemRecipes
-    newDT_ItemRecipes["NameMap"].append(armorTag)
-    newDT_ItemRecipes["NameMap"].append(f'Armor.{armorTag}')
-    newDT_ItemRecipes["Exports"][0]["Table"]["Data"].append(itemRecipeTemplate)
-
-    saveJson(newArmorRecipesPath, newDT_ItemRecipes)
+        itemRecipeTemplate["Value"][12]["Value"][4] = unlockRequiredConstruction 
