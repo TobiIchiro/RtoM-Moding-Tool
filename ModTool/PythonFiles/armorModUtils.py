@@ -14,7 +14,7 @@ def missingArmorRecipes(scriptDir, execDir):
     """
     dtItemRecipesPath = os.path.join(execDir, "..", "Saves", "UpdateMods","MoreArmor", "DT_ItemRecipes.json")
     newDtItemRecipesPath = os.path.join(execDir, "..", "Saves", "newObjects", "MoreArmor", "DT_ItemRecipes.json")
-    dtArmorPath = os.path.join(scriptDir, "..", "Data", "MoreArmor", "Armor.json")
+    dtArmorPath = os.path.join(scriptDir, "MoreArmor", "Armor.json")
     missingArmorList = []
 
     dtItemRecipes = loadJson(dtItemRecipesPath)
