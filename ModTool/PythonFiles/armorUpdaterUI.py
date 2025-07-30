@@ -64,7 +64,7 @@ class ArmorUpdaterUI(QWidget):
         Restore the Shayar, Amzul and Masharuz armors.
         """
         DT_ItemRecipesPath = os.path.join(self.execDir,"..", "Saves", "UpdateMods", "MoreArmor", "DT_ItemRecipes.json")
-        templatePath = os.path.join(self.scriptDir,"..", "Data", "MoreArmor", "UnlockRequiredItems.json")
+        templatePath = os.path.join(self.scriptDir, "MoreArmor", "UnlockRequiredItems.json")
         DT_modedItemRecipesPath = os.path.join(self.execDir, "..", "Saves", "UpdateMods", "MoreArmor", "moded", "DT_ItemRecipes.json")
 
         DT_ItemRecipes = loadJson(DT_ItemRecipesPath)
