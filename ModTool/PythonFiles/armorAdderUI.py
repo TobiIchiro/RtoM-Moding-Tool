@@ -253,7 +253,7 @@ class ArmorAdderUI(QWidget):
         DTItemRecipesHandle(self.execDir, self.scriptDir, armorTag, craftingStations, materials, self.unlockType, unlockRequirement)
 
 
-        self.missingArmor = missingArmorRecipes(self.scriptDir)
+        self.missingArmor = missingArmorRecipes(self.scriptDir, self.execDir)
         self.ArmorComboBox.clear()
         self.ArmorComboBox.addItems([list(d.keys())[0] for d in self.missingArmor])
         
