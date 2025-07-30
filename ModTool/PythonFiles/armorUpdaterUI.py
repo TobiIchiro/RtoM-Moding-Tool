@@ -32,7 +32,7 @@ class ArmorUpdaterUI(QWidget):
         self.restoreBWGButton = QPushButton()
         self.restoreBWGButton.setText("Restore Shayar, Amzul and Masharuz armors")
         self.restoreBWGButton.setFixedSize(300,150)
-        self.restoreBWGButton.setEnabled(False)
+        self.restoreBWGButton.setEnabled(True)
         self.restoreBWGButton.setToolTip("This button will restore the recipes for Shayar, Amzul and Masharuz armors.")
         self.restoreBWGButton.clicked.connect(self.restoreBWG)
 
@@ -121,14 +121,43 @@ class ArmorUpdaterUI(QWidget):
         sandboxExclusiveItemsList = sandboxExclusiveItemsListHandler()
 
         #Step 1: Load Json files
-        #Step 2: Check for every sandbox exclusive item in the DT_ItemRecipes.json
-        #Step 3: check if the item is not in the campaign mode by checking defaultunlocks
-        #Step 4: If the the item is not, change the unlock type to DiscoverDependencies
-        #Step 5: Add unlock requirements to the item
-        #Step 6: Save the modified DT_ItemRacipes.json
+        DT_modedItemRecipesPath = os.path.join(self.execDir, "..", "Saves", "UpdateMods", "MoreArmor", "moded", "DT_ItemRecipes.json")
+        unlockRequirementsStructsPath = os.path.join(self.scriptDir, "MoreArmor", "UnlockRequirementsStructs.json")
+        dummyStructsPath = os.path.join(self.scriptDir, "MoreArmor", "DumyStructs.json")
+
+        DT_ItemRecipes = loadJson(DT_modedItemRecipesPath)
+        unlockRequirementsStructs = loadJson(unlockRequirementsStructsPath)
+        dummyStructs = loadJson(dummyStructsPath)
+        
+
+        #Step 2: Check for every sandbox exclusive item in the DT_ItemRecipes.json is not unlocked by cheking defaultUnlocks
+        itemRecipes = (DT_ItemRecipes.get("Exports",[{}])[0]
+            .get("Table",{})
+            .get("Data",[])
+        )
+        for item in sandboxExclusiveItemsList:
+            #Step 3: Change unlocktype to DiscoverDependencies
+            for recipe in itemRecipes:
+                if recipe.get("Name") == item["Tag"] and recipe["Value"][12]["Value"][0]["Value"] == "EMorRecipeUnlockType::Manual":
+                    recipe["Value"][12]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
+                    #Step 4: Add unlock requirements
+                    unlockConditionsHandler(
+                        recipe,
+                        item["UnlockOption"],
+                        item["UnlockRequirement"],
+                        unlockRequirementsStructs,
+                        dummyStructs
+                        )
+                    if recipe["Value"][13]["Value"] != "ERowEnabledState::Live":
+                        recipe["Value"][13]["Value"] = "ERowEnabledState::Live"
+
+        #Step 8: Save the modified DT_ItemRacipes.json
+        saveJson(DT_modedItemRecipesPath, DT_ItemRecipes)
         #Step 7: Show a message box with the success message
+        QMessageBox.information(self,"Success","Sandbox exclusive items can be unlocked in campaign")
         #Step 8: Enable the addCosmeticArmorsButton
-        QMessageBox.information(self, "Information", "This feature is not implemented yet. Please wait for updates.")
+        
+        #QMessageBox.information(self, "Information", "This feature is not implemented yet. Please wait for updates.")
         self.SandboxToCampaignButton.setEnabled(False)
         self.addCosmeticArmorsButton.setEnabled(True)
     
@@ -139,10 +168,18 @@ class ArmorUpdaterUI(QWidget):
         """
 
         #Step 1: Load new armor recipes and vanilla file.
+        DT_modedItemRecipesPath = os.path.join(self.execDir, "..", "Saves", "UpdateMods", "MoreArmor", "moded", "DT_ItemRecipes.json")
+        newDtItemRecipesPath = os.path.join(self.execDir, "..", "Saves", "newObjects", "MoreArmor", "DT_ItemRecipes.json")
+        DT_ItemRecipes = loadJson(DT_modedItemRecipesPath)
+        newDT_ItemRecipes = loadJson(newDtItemRecipesPath)
         #Step 2: Extend NameMap with the new armor recipes file NameMap.
+        DT_ItemRecipes["NameMap"].extend(newDT_ItemRecipes["NameMap"])
         #Step 3: Extend Exports with the new armor recipes file Exports.
+        DT_ItemRecipes["Exports"][0]["Table"]["Data"][0].extend(newDT_ItemRecipes["Exports"][0]["Table"]["Data"][0])
         #Step 4: Save the modified DT_ItemRecipes.json
+        saveJson(DT_modedItemRecipesPath, DT_ItemRecipes)
         #Step 5: Show a message box with the success message
+        QMessageBox.information(self, "Sucess", "Added Cosmetic Armor Recipes")
         #Step 6: Enable the restoreBWGButton
         QMessageBox.information(self, "Information", "This feature is not implemented yet. Please wait for updates.")
         self.addCosmeticArmorsButton.setEnabled(False)
