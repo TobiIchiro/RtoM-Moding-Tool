@@ -127,12 +127,12 @@ def unlockConditionsHandler(itemRecipeTemplate, unlockOption, unlockRequirement,
         dummyStructs (dict): Empty Structs for not used fields
     """
     if unlockOption == "UnlockRequiredItems":
-        unlockRequiredItems = unlockRequirementsStructs["UnlockRequiredItems"].copy()
+        unlockRequiredItems = copy.deepcopy(unlockRequirementsStructs["UnlockRequiredItems"])
         unlockRequiredItems["Value"][0]["Value"][0]["Value"] = unlockRequirement
         itemRecipeTemplate["Value"][12]["Value"][3] = unlockRequiredItems
         itemRecipeTemplate["Value"][12]["Value"][4] = dummyStructs["UnlockRequiredConstructions"]
     else:
-        unlockRequiredConstruction = unlockRequirementsStructs["UnlockRequiredConstructions"].copy()
+        unlockRequiredConstruction = copy.deepcopy(unlockRequirementsStructs["UnlockRequiredConstructions"])
         unlockRequiredConstruction["Value"][0]["Value"][0]["Value"] = unlockRequirement
         itemRecipeTemplate["Value"][12]["Value"][3] = dummyStructs["UnlockRequiredItems"]
         itemRecipeTemplate["Value"][12]["Value"][4] = unlockRequiredConstruction 
