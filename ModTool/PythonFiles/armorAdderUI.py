@@ -22,7 +22,7 @@ class ArmorAdderUI(QWidget):
         self.scriptDir = scriptDir
         self.execDir = execDir
 
-        self.missingArmor = missingArmorRecipes(self.scriptDir)
+        self.missingArmor = missingArmorRecipes(self.scriptDir, self.execDir)
 
         self.items = items
         self.materialsWidgets = []
