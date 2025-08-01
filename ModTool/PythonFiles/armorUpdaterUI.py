@@ -156,8 +156,6 @@ class ArmorUpdaterUI(QWidget):
         #Step 7: Show a message box with the success message
         QMessageBox.information(self,"Success","Sandbox exclusive items can be unlocked in campaign")
         #Step 8: Enable the addCosmeticArmorsButton
-        
-        #QMessageBox.information(self, "Information", "This feature is not implemented yet. Please wait for updates.")
         self.SandboxToCampaignButton.setEnabled(False)
         self.addCosmeticArmorsButton.setEnabled(True)
     
@@ -181,7 +179,6 @@ class ArmorUpdaterUI(QWidget):
         #Step 5: Show a message box with the success message
         QMessageBox.information(self, "Sucess", "Added Cosmetic Armor Recipes")
         #Step 6: Enable the restoreBWGButton
-        QMessageBox.information(self, "Information", "This feature is not implemented yet. Please wait for updates.")
         self.addCosmeticArmorsButton.setEnabled(False)
         self.restoreBWGButton.setEnabled(True)
         
