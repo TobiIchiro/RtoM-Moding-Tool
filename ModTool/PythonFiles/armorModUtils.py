@@ -154,6 +154,7 @@ def sandboxExclusiveItemsListHandler():
             {"Tag":"BlueMountainsHunter_Set_TorsoArmor", "UnlockOption":"UnlockRequiredItems", "UnlockRequirement":"Item.Hide"}, #Blue Mountains Hunter's Armor
             {"Tag":"BlueMountainsHunter_Set_BootsArmor", "UnlockOption":"UnlockRequiredItems", "UnlockRequirement":"Item.Hide"}, #Blue Mountains Hunter’s Boots
             {"Tag":"RangeBonus_Set_GlovesArmor", "UnlockOption":"UnlockRequiredItems", "UnlockRequirement":"Item.Hide"}, #Blue Mountains Hunter’s Gloves
+            {"Tag":"BowmansGloves", "UnlockOption":"UnlockRequiredItems", "UnlockRequirement":"Item.Hide"}, #Blue Mountains Hunter’s Gloves
             {"Tag":"AntiColdTorso", "UnlockOption":"UnlockRequiredItems", "UnlockRequirement":"Item.BoltsOfCloth"}, #Grey Mountain Overcoat
             {"Tag":"AntiColdBoots", "UnlockOption":"UnlockRequiredItems", "UnlockRequirement":"Item.BoltsOfCloth"}, #Grey Mountains Boots
             {"Tag":"AntiColdGloves", "UnlockOption":"UnlockRequiredItems", "UnlockRequirement":"Item.BoltsOfCloth"}, #Grey Mountain Gloves
