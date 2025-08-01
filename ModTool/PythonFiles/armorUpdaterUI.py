@@ -138,7 +138,7 @@ class ArmorUpdaterUI(QWidget):
         for item in sandboxExclusiveItemsList:
             #Step 3: Change unlocktype to DiscoverDependencies
             for recipe in itemRecipes:
-                if recipe.get("Name") == item["Tag"] and recipe["Value"][12]["Value"][0]["Value"] == "EMorRecipeUnlockType::Manual":
+                if recipe.get("Name") == item["Tag"] and recipe["Value"][12]["Value"][0]["Value"] != "EMorRecipeUnlockType::DiscoverDependencies":
                     recipe["Value"][12]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
                     #Step 4: Add unlock requirements
                     unlockConditionsHandler(
@@ -173,7 +173,7 @@ class ArmorUpdaterUI(QWidget):
         #Step 2: Extend NameMap with the new armor recipes file NameMap.
         DT_ItemRecipes["NameMap"].extend(newDT_ItemRecipes["NameMap"])
         #Step 3: Extend Exports with the new armor recipes file Exports.
-        DT_ItemRecipes["Exports"][0]["Table"]["Data"][0].extend(newDT_ItemRecipes["Exports"][0]["Table"]["Data"][0])
+        DT_ItemRecipes["Exports"][0]["Table"]["Data"].extend(newDT_ItemRecipes["Exports"][0]["Table"]["Data"])
         #Step 4: Save the modified DT_ItemRecipes.json
         saveJson(DT_modedItemRecipesPath, DT_ItemRecipes)
         #Step 5: Show a message box with the success message
