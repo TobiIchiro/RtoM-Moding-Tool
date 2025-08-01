@@ -30,6 +30,7 @@ class ArmorAdderUI(QWidget):
             "CraftingStation_BasicForge": "Forge",
             "CraftingStation_AdvancedForge": "Khuzdul Forge",
             "CraftingStation_Workbench": "Workbench",
+            "CraftingStation_FabricStation": "Loom",
             "CraftingStation_LegendayElvishForge": "Great Forge of Narvi",
             "CraftingStation_FloodedForge": "Great Belegost Forge",
             "CraftingStation_NogrodForge": "Great Forge of Nogrod",
