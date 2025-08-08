@@ -158,5 +158,8 @@ class ConstructionUpdaterUI(QWidget):
         saveJson(self.buildPath("moded", "DT_ConstructionRecipes.json"), DT_ConstructionRecipesJson)
         saveJson(self.buildPath("moded", "DT_Constructions.json"),DT_ConstructionsJson)
 
+        self.restoreButton.setEnabled(True)
+        self.updaterButton.setEnabled(False)
+
 
 
