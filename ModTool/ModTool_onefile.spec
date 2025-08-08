@@ -33,7 +33,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name="ModToolTool",
+    name="TobiIchiroModTool",
     debug=False,
     strip=False,
     upx=True,

@@ -12,6 +12,10 @@ from jsonHandler import (
         loadJson, saveJson
 )
 
+from modUtils import (
+    Advanced_Bannister_Post_Stone_Unlock
+)
+
 class ConstructionUpdaterUI(QWidget):
     def __init__(self, scriptDir):
         super().__init__()
@@ -99,6 +103,8 @@ class ConstructionUpdaterUI(QWidget):
             if name in constructions:
                 try:
                     recipe["Value"][20]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
+                    if name == "Advanced_Bannister_Post_Stone":
+                        recipe["Value"][20]["Value"][3] = Advanced_Bannister_Post_Stone_Unlock()
                 except (KeyError, IndexError, TypeError):
                     continue
 

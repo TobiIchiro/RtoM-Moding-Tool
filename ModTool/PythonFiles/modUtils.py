@@ -171,3 +171,39 @@ def DTConstructionRecipesHandle(uniqueTag, path, dataDir,  categoryTag, required
 
 
 
+def Advanced_Bannister_Post_Stone_Unlock():
+        return {
+                "$type": "UAssetAPI.PropertyTypes.Objects.ArrayPropertyData, UAssetAPI",
+                "ArrayType": "StructProperty",
+                "Name": "UnlockRequiredItems",
+                "ArrayIndex": 0,
+                "IsZero": False,
+                "PropertyTagFlags": "None",
+                "PropertyTagExtensions": "NoExtension",
+                "Value": [
+                        {
+                                "$type": "UAssetAPI.PropertyTypes.Structs.StructPropertyData, UAssetAPI",
+                                "StructType": "MorAnyItemRowHandle",
+                                "SerializeNone": True,
+                                "StructGUID": "{00000000-0000-0000-0000-000000000000}",
+                                "SerializationControl": "NoExtension",
+                                "Operation": "None",
+                                "Name": "UnlockRequiredItems",
+                                "ArrayIndex": 0,
+                                "IsZero": False,
+                                "PropertyTagFlags": "None",
+                                "PropertyTagExtensions": "NoExtension",
+                                "Value": [
+                                                {
+                                                        "$type": "UAssetAPI.PropertyTypes.Objects.NamePropertyData, UAssetAPI",
+                                                        "Name": "RowName",
+                                                        "ArrayIndex": 0,
+                                                        "IsZero": False,
+                                                        "PropertyTagFlags": "None",
+                                                        "PropertyTagExtensions": "NoExtension",
+                                                        "Value": "Ore.Granite"
+                                                }
+                                ]
+                        }
+                ]
+        }
