@@ -52,7 +52,8 @@ class ConstructionUpdaterUI(QWidget):
         base = {
             "vanilla": os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings"),
             "new": os.path.join(self.scriptDir,"..","Saves","newObjects","MoreBuildings"),
-            "moded": os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded")
+            "moded": os.path.join(self.scriptDir,"..","Saves","UpdateMods","MoreBuildings","moded"),
+            "restore": os.path.join(self.scriptDir,"..","Saves","UpdateMods","RestoreBuildings")
         }[category]
         return os.path.abspath(os.path.join(base, fileName))
     
@@ -109,6 +110,7 @@ class ConstructionUpdaterUI(QWidget):
                     continue
 
         saveJson(self.buildPath("moded", "DT_ConstructionRecipes.json"), data)
+        saveJson(self.buildPath("restore","DT_ConstructionRecipes.json"), data)
         QMessageBox.information(self, "Restoration Complete", "Constructions removed in 1.2 have been restored.")
         self.restoreButton.setEnabled(False)
         self.updaterButton.setEnabled(True)
