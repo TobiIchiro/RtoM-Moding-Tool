@@ -20,7 +20,6 @@ class ConstructionUpdaterUI(QWidget):
     def __init__(self, scriptDir):
         super().__init__()
         self.setMinimumWidth(500)
-        self.setMaximumWidth(500)
 
         self.scriptDir = scriptDir
 
@@ -102,12 +101,14 @@ class ConstructionUpdaterUI(QWidget):
         for recipe in recipeList:
             name = recipe.get("Name")
             if name in constructions:
-                try:
-                    recipe["Value"][20]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
-                    if name == "Advanced_Bannister_Post_Stone":
-                        recipe["Value"][20]["Value"][3] = Advanced_Bannister_Post_Stone_Unlock()
-                except (KeyError, IndexError, TypeError):
-                    continue
+                for prop in recipe["Value"]:
+                    if prop.get("Name") == "DefaultUnlocks":
+                        try:
+                            prop["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
+                            if name == "Advanced_Bannister_Post_Stone":
+                                prop["Value"][3] = Advanced_Bannister_Post_Stone_Unlock()
+                        except (KeyError, IndexError, TypeError):
+                            continue
 
         saveJson(self.buildPath("moded", "DT_ConstructionRecipes.json"), data)
         saveJson(self.buildPath("restore","DT_ConstructionRecipes.json"), data)
@@ -159,6 +160,7 @@ class ConstructionUpdaterUI(QWidget):
         saveJson(self.buildPath("moded", "Architecture.json"), architectureJson)
         saveJson(self.buildPath("moded", "DT_ConstructionRecipes.json"), DT_ConstructionRecipesJson)
         saveJson(self.buildPath("moded", "DT_Constructions.json"),DT_ConstructionsJson)
+        QMessageBox.information(self,"Mod Updated!", "The files for creating the More Boulding Mod and Restore Builgings Mod have been created")
 
         self.restoreButton.setEnabled(True)
         self.updaterButton.setEnabled(False)

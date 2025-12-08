@@ -33,7 +33,6 @@ class MainWindow(QMainWindow):
         print(f"DataDir: {dataDir}")
         self.setWindowTitle("TobiIchiro Moding Tool")
         self.setWindowIcon(QIcon(iconPath))
-        self.resize(500,500)
 
         #Tabs container
         self.tabs = QTabWidget()
@@ -64,5 +63,5 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
-    window.show()
+    window.showMaximized()
     sys.exit(app.exec())

@@ -16,7 +16,6 @@ class ConstructionAdderUI(QWidget):
         super().__init__()
         self.setWindowTitle("New Construction Adder")
         self.setMinimumWidth(500)
-        self.setMaximumWidth(500)
 
         self.execDir = execDir
         self.dataDir = dataDir

@@ -16,7 +16,6 @@ class ConstructionRestoreUI(QWidget):
         super().__init__()
         self.setWindowTitle("Restore Constructions")
         self.setMinimumWidth(500)
-        self.setMaximumWidth(500)
         self.scriptDir = scriptDir
 
         self.setupUI()
