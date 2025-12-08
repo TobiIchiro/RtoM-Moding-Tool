@@ -421,19 +421,19 @@
                     ],
                     [
                         "AradrenPack_Ladder_A.Name",
-                        "Ladder"
+                        "Long Ladder"
                     ],
                     [
                         "AradrenPack_Ladder_A.Description",
-                        "A Short Vertical Wooden Ladder"
+                        "A Long Vertical Wooden Ladder"
                     ],
                     [
                         "AradrenPack_Ladder_B.Name",
-                        "Ladder"
+                        "Short Ladder"
                     ],
                     [
                         "AradrenPack_Ladder_B.Description",
-                        "A Long Vertical Wooden Ladder"
+                        "A Short Vertical Wooden Ladder"
                     ],
                     [
                         "AradrenPack_DecorativeBarrier_A.Name",
@@ -466,6 +466,606 @@
                     [
                         "AradrenPack_ColumnCapital_A.Description",
                         "A Double Height Column Capital"
+                    ],
+                    [
+                        "SeraniPack_WoodPile_A.Name",
+                        "Wood Pile"
+                    ],
+                    [
+                        "SeraniPack_WoodPile_A.Description",
+                        "A Pile of Wood"
+                    ],
+                    [
+                        "MereakPack_NarrowArchwayPillar_A.Name",
+                        "Narrow Archway Pillar"
+                    ],
+                    [
+                        "MereakPack_NarrowArchwayPillar_A.Description",
+                        "A Narrow Archway Pillar"
+                    ],
+                    [
+                        "MereakPack_CornerTrim_A.Name",
+                        "Corner Trim"
+                    ],
+                    [
+                        "MereakPack_CornerTrim_A.Description",
+                        "A Left Corner Trim"
+                    ],
+                    [
+                        "MereakPack_CornerTrim_B.Name",
+                        "Corner Trim"
+                    ],
+                    [
+                        "MereakPack_CornerTrim_B.Description",
+                        "A Right Corner Trim"
+                    ],
+                    [
+                        "MereakPack_Pedestal_A.Name",
+                        "Pedestal"
+                    ],
+                    [
+                        "MereakPack_Pedestal_A.Description",
+                        "A Pedestal for Statues"
+                    ],
+                    [
+                        "MereakPack_ShortMemorialStatue_A.Name",
+                        "Short Memorial Statue"
+                    ],
+                    [
+                        "MereakPack_ShortMemorialStatue_A.Description",
+                        "A Memorial Statue to honor the fallen"
+                    ],
+                    [
+                        "UzbadPack_AngledWoodenFloor_A.Name",
+                        "Angled Wooden Floor"
+                    ],
+                    [
+                        "UzbadPack_AngledWoodenFloor_A.Description",
+                        "Angled Wooden Floor"
+                    ],
+                    [
+                        "UzbadPack_ThinWoodFloorTile_A.Name",
+                        "Thin Wood Floor Tile"
+                    ],
+                    [
+                        "UzbadPack_ThinWoodFloorTile_A.Description",
+                        "Thin Wood Floor Tile"
+                    ],
+                    [
+                        "SeraniPack_KegStand_A.Name",
+                        "Keg Stand"
+                    ],
+                    [
+                        "SeraniPack_KegStand_A.Description",
+                        "Keg Stand"
+                    ],
+                    [
+                        "SeraniPack_PotsRack_A.Name",
+                        "Pots Rack"
+                    ],
+                    [
+                        "SeraniPack_PotsRack_A.Description",
+                        "Pots Rack"
+                    ],
+                    [
+                        "OlfahrPack_Wagon_A.Name",
+                        "Wagon"
+                    ],
+                    [
+                        "OlfahrPack_Wagon_A.Description",
+                        "Wagon used in the Mines"
+                    ],
+                    [
+                        "OlfahrPack_LargeWinch_A.Name",
+                        "Large Winch"
+                    ],
+                    [
+                        "OlfahrPack_LargeWinch_A.Description",
+                        "A Large Winch used in the Mines"
+                    ],
+                    [
+                        "OlfahrPack_Lift_A.Name",
+                        "Tall Lift"
+                    ],
+                    [
+                        "OlfahrPack_Lift_A.Description",
+                        "A Tall Lift used in the Mines"
+                    ],
+                    [
+                        "OlfahrPack_Lift_B.Name",
+                        "Lift"
+                    ],
+                    [
+                        "OlfahrPack_Lift_B.Description",
+                        "A Lift used in the Mines"
+                    ],
+                    [
+                        "OlfahrPack_Windlass_A.Name",
+                        "Windlass"
+                    ],
+                    [
+                        "OlfahrPack_Windlass_A.Description",
+                        "A Windlass used in the Mines"
+                    ],
+                    [
+                        "OlfahrPack_Bucket_A.Name",
+                        "Bucket"
+                    ],
+                    [
+                        "OlfahrPack_Bucket_A.Description",
+                        "An Small Wooden Bucket"
+                    ],
+                    [
+                        "OlfahrPack_Basin_A.Name",
+                        "Basin"
+                    ],
+                    [
+                        "OlfahrPack_Basin_A.Description",
+                        "A Metal Basin"
+                    ],
+                    [
+                        "OlfahrPack_Barrel_A.Name",
+                        "Barrel"
+                    ],
+                    [
+                        "OlfahrPack_Barrel_A.Description",
+                        "An Open Barrel"
+                    ],
+                    [
+                        "OlfahrPack_OpenWoodenCrate_A.Name",
+                        "Open Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_OpenWoodenCrate_A.Description",
+                        "An Open Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_OpenWoodenCrate_B.Name",
+                        "Open Long Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_OpenWoodenCrate_B.Description",
+                        "An Open Long Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_WoodenCrate_A.Name",
+                        "Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_WoodenCrate_A.Description",
+                        "A Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_WoodenCrate_B.Name",
+                        "Long Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_WoodenCrate_B.Description",
+                        "A Long Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_OrnateWoodenCrate_A.Name",
+                        "Ornate Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_OrnateWoodenCrate_A.Description",
+                        "An Ornate Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_OrnateWoodenCrate_B.Name",
+                        "Long Ornate Wooden Crate"
+                    ],
+                    [
+                        "OlfahrPack_OrnateWoodenCrate_B.Description",
+                        "A Long Ornate Wooden Crate"
+                    ],
+                    [
+                        "SeraniPack_DwellingCabinet_D.Name",
+                        "Dwelling Cabinet"
+                    ],
+                    [
+                        "SeraniPack_DwellingCabinet_D.Description",
+                        "A Locked Dwelling Cabinet"
+                    ],
+                    [
+                        "TobiFloorPack_InlaidFloor_A.Name",
+                        "Inlaid Adamant Floor"
+                    ],
+                    [
+                        "TobiFloorPack_InlaidFloor_A.Description",
+                        "A decorated adamant floor"
+                    ],
+                    [
+                        "TobiFloorPack_PatternedFloor_A.Name",
+                        "Patterned Floor"
+                    ],
+                    [
+                        "TobiFloorPack_PatternedFloor_A.Description",
+                        "A decorated floor"
+                    ],
+                    [
+                        "TobiFloorPack_PatternedFloor_B.Name",
+                        "Patterned White Floor"
+                    ],
+                    [
+                        "TobiFloorPack_PatternedFloor_B.Description",
+                        "A decorated white floor"
+                    ],
+                    [
+                        "TobiFloorPack_TiledFloor_A.Name",
+                        "Tiled Mossy Floor"
+                    ],
+                    [
+                        "TobiFloorPack_TiledFloor_A.Description",
+                        "A decorated mossy floor"
+                    ],
+                    [
+                        "TobiFloorPack_TiledFloor_B.Name",
+                        "Tiled Floor"
+                    ],
+                    [
+                        "TobiFloorPack_TiledFloor_B.Description",
+                        "A decorated floor"
+                    ],
+                    [
+                        "TobiFloorPack_TiledFloor_C.Name",
+                        "Tiled Floor"
+                    ],
+                    [
+                        "TobiFloorPack_TiledFloor_C.Description",
+                        "A decorated white floor"
+                    ],
+                    [
+                        "CurvedPack_CurvedBarrier_A.Name",
+                        "Granite Curved Barrier"
+                    ],
+                    [
+                        "CurvedPack_CurvedBarrier_A.Description",
+                        "A curved granite barrier"
+                    ],
+                    [
+                        "CurvedPack_CurvedWall_A.Name",
+                        "Granite Curved Wall"
+                    ],
+                    [
+                        "CurvedPack_CurvedWall_A.Description",
+                        "A curved granite wall"
+                    ],
+                    [
+                        "CurvedPack_CurvedBarrier_B.Name",
+                        "Wood Curved barrier"
+                    ],
+                    [
+                        "CurvedPack_CurvedBarrier_B.Description",
+                        "A wooden curved wall"
+                    ],
+                    [
+                        "CurvedPack_CurvedWall_B.Name",
+                        "Wood Curved wall"
+                    ],
+                    [
+                        "CurvedPack_CurvedWall_B.Description",
+                        "A wooden curved wall"
+                    ],
+                    [
+                        "CurvedPack_CurvedBarrier_C.Name",
+                        "Thin Wood Curved Barrier"
+                    ],
+                    [
+                        "CurvedPack_CurvedBarrier_C.Description",
+                        "A Thin Curved Barrier"
+                    ],
+                    [
+                        "CurvedPack_CurvedWall_C.Name",
+                        "Thin Wood Curved Wall"
+                    ],
+                    [
+                        "CurvedPack_CurvedWall_C.Description",
+                        "A Thin Curved Wall"
+                    ],
+                    [
+                        "CurvedPack_CurvedStairs_A.Name",
+                        "Narrow Spiral Stone Stairs"
+                    ],
+                    [
+                        "CurvedPack_CurvedStairs_A.Description",
+                        "Stairs"
+                    ],
+                    [
+                        "CurvedPack_CurvedStairs_B.Name",
+                        "Tall Spiral Stone Stairs"
+                    ],
+                    [
+                        "CurvedPack_CurvedStairs_B.Description",
+                        "Tall Spiral Stone Stairs"
+                    ],
+                    [
+                        "100BuildingsPack_GraniteWall45_A.Name",
+                        "Granite wall 45"
+                    ],
+                    [
+                        "100BuildingsPack_GraniteWall45_A.Description",
+                        "A granite wall rotated 45°"
+                    ],
+                    [
+                        "100BuildingsPack_GraniteBarrier45_A.Name",
+                        "Granite barrier 45"
+                    ],
+                    [
+                        "100BuildingsPack_GraniteBarrier45_A.Description",
+                        "A granite barrier rotated 45°"
+                    ],
+                    [
+                        "100BuildingsPack_TelcharForge_A.Name",
+                        "Telchar Forge"
+                    ],
+                    [
+                        "100BuildingsPack_TelcharForge_A.Description",
+                        "Advanced forge used by Telchar"
+                    ],
+                    [
+                        "100BuildingsPack_GimlisMap_A.Name",
+                        "Gimli’s Map"
+                    ],
+                    [
+                        "100BuildingsPack_GimlisMap_A.Description",
+                        "A map showing where the dwarves that answered Gimli’s call."
+                    ],
+                    [
+                        "100BuildingsPack_GuardStatue_A.Name",
+                        "Guard Statue"
+                    ],
+                    [
+                        "100BuildingsPack_GuardStatue_A.Description",
+                        "A decorative statue"
+                    ],
+                    [
+                        "100BuildingsPack_HangingIronLantern_A.Name",
+                        "Hanging iron lantern"
+                    ],
+                    [
+                        "100BuildingsPack_HangingIronLantern_A.Description",
+                        "A simple and sturdy lantern"
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_A.Name",
+                        "Jade Ceiling Lamp"
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_A.Description",
+                        "A ceiling lamp that produces a green light."
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_B.Name",
+                        "Citrine Ceiling Lamp"
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_B.Description",
+                        "A ceiling lamp that produces a yellow light."
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_C.Name",
+                        "Ceiling Lamp"
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_C.Description",
+                        "A ceiling lamp that produces a blue light."
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_D.Name",
+                        "Quartz Ceiling Lamp"
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_D.Description",
+                        "A ceiling lamp that produces a white light."
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_E.Name",
+                        "Iolite Ceiling Lamp"
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_E.Description",
+                        "A ceiling lamp that produces a purple light."
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_F.Name",
+                        "Amber Ceiling Lamp"
+                    ],
+                    [
+                        "GrumniPack_CeilingLamp_F.Description",
+                        "A ceiling lamp that produces a orange light."
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_A.Name",
+                        "Silver Wall"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_A.Description",
+                        "Silver"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_B.Name",
+                        "Silver Wall"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_B.Description",
+                        "D"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_C.Name",
+                        "Silver Wall"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_C.Description",
+                        "A"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_D.Name",
+                        "Silver Wall"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_D.Description",
+                        "B"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_E.Name",
+                        "Silver Wall"
+                    ],
+                    [
+                        "SilverWallsPack_SilverWall_E.Description",
+                        "C"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_A.Name",
+                        "Mithril Wall"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_A.Description",
+                        "E"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_B.Name",
+                        "Mithril Wall"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_B.Description",
+                        "D"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_C.Name",
+                        "Mithril Wall"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_C.Description",
+                        "A"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_D.Name",
+                        "Mithril Wall"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_D.Description",
+                        "B"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_E.Name",
+                        "Mithril Wall"
+                    ],
+                    [
+                        "MithrilWallsPack_MithrilWall_E.Description",
+                        "C"
+                    ],
+                    [
+                        "GrunmniPack_ColumnTrimCapital_A.Name",
+                        "Column Trim Capital"
+                    ],
+                    [
+                        "GrunmniPack_ColumnTrimCapital_A.Description",
+                        "Capital"
+                    ],
+                    [
+                        "GrunmniPack_ColumnTrimShaft_A.Name",
+                        "Column Trim Shaft"
+                    ],
+                    [
+                        "GrunmniPack_ColumnTrimShaft_A.Description",
+                        "Shaft 1m"
+                    ],
+                    [
+                        "GrunmniPack_ColumnTrimShaft_B.Name",
+                        "Column Trim Shaft"
+                    ],
+                    [
+                        "GrunmniPack_ColumnTrimShaft_B.Description",
+                        "Shaft 2m"
+                    ],
+                    [
+                        "GrunmniPack_ShortBrazier_A.Name",
+                        "Short brazier"
+                    ],
+                    [
+                        "GrunmniPack_ShortBrazier_A.Description",
+                        "Short brazier No Legs"
+                    ],
+                    [
+                        "GrunmniPack_ShortBrazier_B.Name",
+                        "Short brazier"
+                    ],
+                    [
+                        "GrunmniPack_ShortBrazier_B.Description",
+                        "Short brazier"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnBase_A.Name",
+                        "Column Base"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnBase_A.Description",
+                        "CB_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnCapital_A.Name",
+                        "Column Capital"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnCapital_A.Description",
+                        "CC_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnShaft_A.Name",
+                        "Column Shaft"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnShaft_A.Description",
+                        "CS_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnBase_Redrock_A.Name",
+                        "Column Base_RedRock"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnBase_Redrock_A.Description",
+                        "CS_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnCapital_Redrock_A.Name",
+                        "Column Capital_RedRock"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnCapital_Redrock_A.Description",
+                        "CS_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnShaft_Redrock_A.Name",
+                        "Column Shaft_RedRock"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnShaft_Redrock_A.Description",
+                        "CS_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnBase_Whitemarble_A.Name",
+                        "Column Base_WhiteMarble"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnBase_Whitemarble_A.Description",
+                        "CS_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnCapital_Whitemarble_A.Name",
+                        "Column Capital_WhiteMarble"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnCapital_Whitemarble_A.Description",
+                        "CS_A"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnShaft_Whitemarble_A.Name",
+                        "Column Shaft_WhiteMarble"
+                    ],
+                    [
+                        "TobiDurinPack_ColumnShaft_Whitemarble_A.Description",
+                        "CS_A"
                     ]
                 ]
             }
