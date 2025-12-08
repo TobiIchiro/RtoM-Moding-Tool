@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(constructRecipeAdderTab, "New Construction Adder")
 
         #Tab 2: UI More Buildings Mantain Mod
-        moreBuildingMantainModTab = ConstructionUpdaterUI(execDir)
+        moreBuildingMantainModTab = ConstructionUpdaterUI(execDir, dataDir)
         self.tabs.addTab(moreBuildingMantainModTab, "More Buildings Mantain Mod")
 
         #Tab 3: UI Adding New Armor Recipes

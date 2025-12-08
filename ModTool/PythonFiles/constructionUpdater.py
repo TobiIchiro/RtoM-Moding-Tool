@@ -17,11 +17,12 @@ from modUtils import (
 )
 
 class ConstructionUpdaterUI(QWidget):
-    def __init__(self, scriptDir):
+    def __init__(self, scriptDir, dataDir):
         super().__init__()
         self.setMinimumWidth(500)
 
         self.scriptDir = scriptDir
+        self.dataDir = dataDir
 
         self.setUpUI()
 
@@ -128,16 +129,24 @@ class ConstructionUpdaterUI(QWidget):
         newDT_ConstructionRecipesJson = loadJson(self.buildPath("new", "DT_ConstructionRecipes.json"))
         newDT_ConstructionsJson = loadJson(self.buildPath("new", "DT_Constructions.json"))
         
+        #read imports.json for StringTables
+        stImportsPath = os.path.abspath(os.path.join(self.dataDir,"Imports.json"))
+        stImports = loadJson(stImportsPath)
+
+        architectureST = stImports["Imports"][0:4]
 
         #Apend Architecture
         architectureJson["Exports"][0]["Table"]["Value"].extend(newArchitectureJson["Exports"][0]["Table"]["Value"])
         
         #Apend Constructions
         vanillaImportsLength = len(DT_ConstructionsJson["Imports"])
+        SerializationBeforeCreateDependencies = []
         #Updating imports 2DTextures OuterIndex
         for i, importObj in enumerate(newDT_ConstructionsJson["Imports"]):
             if importObj["OuterIndex"] < 0:
                 importObj["OuterIndex"] = -(vanillaImportsLength + abs(importObj["OuterIndex"]))
+                SerializationBeforeCreateDependencies.append(importObj["OuterIndex"] - 1)
+
 
         #Updating icon reference 
         for construction in newDT_ConstructionsJson["Exports"][0]["Table"]["Data"]:
@@ -149,6 +158,15 @@ class ConstructionUpdaterUI(QWidget):
         DT_ConstructionsJson["NameMap"].extend(newDT_ConstructionsJson["NameMap"])
         DT_ConstructionsJson["Exports"][0]["Table"]["Data"].extend(newDT_ConstructionsJson["Exports"][0]["Table"]["Data"])
         DT_ConstructionsJson["Imports"].extend(newDT_ConstructionsJson["Imports"])
+
+        modedImportsLength = len(DT_ConstructionsJson["Imports"])
+        for i, importObj in enumerate(architectureST):
+            if importObj["OuterIndex"] < 0:
+                importObj["OuterIndex"] = - (modedImportsLength + i)
+                SerializationBeforeCreateDependencies.append(importObj["OuterIndex"] - 1)
+        
+        DT_ConstructionsJson["Imports"].extend(architectureST)
+        DT_ConstructionsJson["Exports"][0]["SerializationBeforeCreateDependencies"].extend(SerializationBeforeCreateDependencies)
         
         #Append ConstructionRecipes
         for nameMap in newDT_ConstructionRecipesJson["NameMap"]:
