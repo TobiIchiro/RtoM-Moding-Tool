@@ -91,9 +91,9 @@ class ArmorUpdaterUI(QWidget):
 
                 # Paso 2: Cambiar UnlockType si es necesario
                 try:
-                    unlockType = item["Value"][12]["Value"][0]["Value"]
+                    unlockType = item["Value"][14]["Value"][0]["Value"]
                     if unlockType == "EMorRecipeUnlockType::Manual":
-                        item["Value"][12]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
+                        item["Value"][14]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
                 except (IndexError, KeyError):
                     QMessageBox.warning(self, "Warning", f"Could not modify UnlockType in {rawName}")
 
@@ -101,7 +101,7 @@ class ArmorUpdaterUI(QWidget):
                 try:
                     newObj = copy.deepcopy(templateObj)
                     newObj["Value"][0]["Value"][0]["Value"] = baseName
-                    item["Value"][12]["Value"][3] = newObj
+                    item["Value"][14]["Value"][3] = newObj
                 except (IndexError, KeyError, TypeError):
                     QMessageBox.warning(self, "Warning", f"Could not replace RequiredRecipe in {rawName}")
         
@@ -137,8 +137,8 @@ class ArmorUpdaterUI(QWidget):
         for item in sandboxExclusiveItemsList:
             #Step 3: Change unlocktype to DiscoverDependencies
             for recipe in itemRecipes:
-                if recipe.get("Name") == item["Tag"] and recipe["Value"][12]["Value"][0]["Value"] != "EMorRecipeUnlockType::DiscoverDependencies":
-                    recipe["Value"][12]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
+                if recipe.get("Name") == item["Tag"] and recipe["Value"][14]["Value"][0]["Value"] != "EMorRecipeUnlockType::DiscoverDependencies":
+                    recipe["Value"][14]["Value"][0]["Value"] = "EMorRecipeUnlockType::DiscoverDependencies"
                     #Step 4: Add unlock requirements
                     unlockConditionsHandler(
                         recipe,
@@ -147,8 +147,8 @@ class ArmorUpdaterUI(QWidget):
                         unlockRequirementsStructs,
                         dummyStructs
                         )
-                    if recipe["Value"][13]["Value"] != "ERowEnabledState::Live":
-                        recipe["Value"][13]["Value"] = "ERowEnabledState::Live"
+                    if recipe["Value"][15]["Value"] != "ERowEnabledState::Live":
+                        recipe["Value"][15]["Value"] = "ERowEnabledState::Live"
 
         #Step 8: Save the modified DT_ItemRacipes.json
         saveJson(DT_modedItemRecipesPath, DT_ItemRecipes)

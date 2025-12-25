@@ -70,11 +70,11 @@ def DTItemRecipesHandle(path, dataDir, armorTag, craftingStations, materials, un
     
     #Handle crafting stations
     craftingStationArray = craftingStationsArrayHandler(craftingStations, craftingStationTemplate)
-    itemRecipeTemplate["Value"][3]["Value"] = craftingStationArray 
+    itemRecipeTemplate["Value"][4]["Value"] = craftingStationArray 
 
     #Handle required materials to craft
     itemArray = craftingMaterialsHandler(materials, requiredMaterialTemplate)
-    itemRecipeTemplate["Value"][8]["Value"] = itemArray
+    itemRecipeTemplate["Value"][10]["Value"] = itemArray
 
     #Handle unlock conditions
     unlockConditionsHandler(itemRecipeTemplate, unlockOption, unlockRequirement, unlockRequirementsStructs, dummyStructs)
@@ -129,13 +129,13 @@ def unlockConditionsHandler(itemRecipeTemplate, unlockOption, unlockRequirement,
     if unlockOption == "UnlockRequiredItems":
         unlockRequiredItems = copy.deepcopy(unlockRequirementsStructs["UnlockRequiredItems"])
         unlockRequiredItems["Value"][0]["Value"][0]["Value"] = unlockRequirement
-        itemRecipeTemplate["Value"][12]["Value"][3] = unlockRequiredItems
-        itemRecipeTemplate["Value"][12]["Value"][4] = dummyStructs["UnlockRequiredConstructions"]
+        itemRecipeTemplate["Value"][14]["Value"][3] = unlockRequiredItems
+        itemRecipeTemplate["Value"][14]["Value"][4] = dummyStructs["UnlockRequiredConstructions"]
     else:
         unlockRequiredConstruction = copy.deepcopy(unlockRequirementsStructs["UnlockRequiredConstructions"])
         unlockRequiredConstruction["Value"][0]["Value"][0]["Value"] = unlockRequirement
-        itemRecipeTemplate["Value"][12]["Value"][3] = dummyStructs["UnlockRequiredItems"]
-        itemRecipeTemplate["Value"][12]["Value"][4] = unlockRequiredConstruction 
+        itemRecipeTemplate["Value"][14]["Value"][3] = dummyStructs["UnlockRequiredItems"]
+        itemRecipeTemplate["Value"][14]["Value"][4] = unlockRequiredConstruction 
 
 
 def sandboxExclusiveItemsListHandler():
