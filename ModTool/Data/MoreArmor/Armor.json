@@ -25,5 +25,12 @@
     "Origin_Set_IronHills_TorsoArmor": "Iron Hills Outfit",
     "Origin_Set_LonelyMountain_TorsoArmor": "Lonely Mountain Outfit",
     "Origin_Set_RedMountains_TorsoArmor": "Red Mountains Outfit",
-    "RedMountains_MinerSet_GlovesArmor": "Miner’s Gloves"
+    "RedMountains_MinerSet_GlovesArmor": "Miner’s Gloves",
+    "Gimli_Set_GlovesArmor": "Gimli's Gloves",
+    "Gimli_Set_TorsoArmor": "Gimli's Armor",
+    "Gimli_Set_BootsArmor": "Gimli's Boots",
+    "KrampusSet_HelmetArmor": "Kabrûn Mask",
+    "KrampusSet_TorsoArmor": "Kabrûn Costume",
+    "KrampusSet_GlovesArmor": "Kabrûn Gloves",
+    "KrampusSet_BootsArmor": "Kabrûn Boots"
 }
