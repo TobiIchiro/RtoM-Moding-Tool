@@ -37,6 +37,7 @@
         "Item.DrakeBones": "Drake Bones",
         "Item.Droppings": "Bat Droppings",
         "Item.ElvenTreeCutting": "Elven Tree Cutting",
+        "Item.FungalTreeCutting": "Ubâsam Cutting",
         "Item.FellBeastHead": "Fell Beast Head",
         "Item.KnowledgeBookA": "Build-lore Tome",
         "Item.KnowledgeScrollA": "Build-lore Scroll",
@@ -44,7 +45,8 @@
         "Item.OrcSkull": "Rukhus Skull",
         "Item.SpiderSilk": "Spider Silk",
         "Item.TrollHIde": "Troll Hide",
-        "Item.WargPelt": "Warg Pelt"
+        "Item.WargPelt": "Warg Pelt",
+        "Item.HollyTreeCutting": "Holly Tree Cutting"
     },
     "UnlockRequiredConstructions": {
         "CraftingStation_BasicForge": "Forge",
@@ -58,6 +60,7 @@
         "RohanPack_Deco_Banner_A": "Rohirrim Banner",
         "EntPack_Everspring": "Wellingspring",
         "OrcHunter_OrcTrophy_A": "Rukhus Spike",
-        "Beorn_Wall_4x3_A": "Timber Wall"
+        "Beorn_Wall_4x3_A": "Timber Wall",
+        "HollyDecoration_A": "Holly Wreath"
     }
 }

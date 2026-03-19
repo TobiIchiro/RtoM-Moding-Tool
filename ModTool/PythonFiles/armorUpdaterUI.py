@@ -47,7 +47,7 @@ class ArmorUpdaterUI(QWidget):
         self.addCosmeticArmorsButton.clicked.connect(self.addCosmeticArmors)
         self.addCosmeticArmorsButton.setToolTip("This button will add the cosmetic armor recipes to the game.")
 
-        layout.addWidget(QLabel("This tab is under construction, please wait for updates."), alignment=Qt.AlignHCenter)
+        #layout.addWidget(QLabel("This tab is under construction, please wait for updates."), alignment=Qt.AlignHCenter)
         
         layout.addWidget(self.restoreBWGButton, alignment=Qt.AlignHCenter)
         layout.addWidget(self.SandboxToCampaignButton, alignment=Qt.AlignHCenter)

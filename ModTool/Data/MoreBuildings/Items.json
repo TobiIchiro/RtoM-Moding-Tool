@@ -25,7 +25,14 @@
         "Consumable.Sunion": "Sunion",
         "Consumable.TeaFlower": "Aulë Bloom",
         "Consumable.Thyme": "Thyme",
-        "Consumable.WhiteBeans": "White Beans"
+        "Consumable.WhiteBeans": "White Beans",
+        "Consumable.OliveOil":"Southern Oil",
+        "Consumable.Saffron":"Saffron",
+        "Consumable.Pumpkin":"Pumpkin",
+        "Consumable.Sweetroot":"Sweetroot",
+        "Consumable.Elanor":"Elanor Flower",
+        "Consumable.Niphredil":"Niphredil Flower",
+        "Consumable.WhaleTalow":"Whale Tallow"
     },
     "Item": {
         "Item.AncientWood": "Ubâsam Wood",
@@ -63,16 +70,27 @@
         "Item.SteelIngot": "Steel Ingot",
         "Item.Wood": "Wood Scraps",
         "Item.DrakeBones": "Drake Bones",
-        "Item.Droppings": "Bat Droppings",
+        "Item.Fertilizer": "Soil Dressing",
         "Item.ElvenTreeCutting": "Elven Tree Cutting",
         "Item.FellBeastHead": "Fell Beast Head",
         "Item.KnowledgeBookA": "Build-lore Tome",
         "Item.KnowledgeScrollA": "Build-lore Scroll",
         "Item.Memorial_Item": "Hero’s Token",
         "Item.OrcSkull": "Rukhus Skull",
-        "Item.SpiderSilk": "Spider Silk",
         "Item.TrollHIde": "Troll Hide",
-        "Item.WargPelt": "Warg Pelt"
+        "Item.WargPelt": "Warg Pelt",
+        "Item.IthildinIngot": "Ithildin Ingot",
+        "Item.SeaWax":"Sea Wax",
+        "Item.Wool":"Northern Wool",
+        "Item.Silk":"Elven Silk",
+        "Item.Shell":"Shell",
+        "Item.FireclayBrick":"Fireclay Brick",
+        "Item.HollyTreeCutting": "Holly Tree Cutting",
+        "Item.CrimsonIngot": "Crimson Metal Ingot",
+        "Item.FungalFoliageCutting_A": "Glowing Mushroom Cutting",
+        "Item.FungalFoliageCutting_B": "Deep Flower Cutting",
+        "Item.CeibaCutting": "Ceiba Cutting",
+        "Item.CeibaWood": "Ceiba Wood"
     },
     "Ore": {
         "Ore.Amber": "Amber",
@@ -107,6 +125,11 @@
         "Ore.StarMetal": "Star-metal Ore",
         "Ore.SunStone": "Sun-stone",
         "Ore.Tin": "Tin Ore",
-        "Ore.Topaz": "Topaz"
+        "Ore.Topaz": "Topaz",
+        "Ore.RedhornPumice": "Pumice",
+        "Ore.Marble": "Coastal Marble",
+        "Ore.RedSandstone": "Red Sandstone",
+        "Ore.Obsidian": "Volcanic Glass",
+        "Ore.PinkOpal": "Pink Opal"
     }
 }

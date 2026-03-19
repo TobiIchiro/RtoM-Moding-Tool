@@ -5,7 +5,8 @@
         "Tool.Restoration_Hammer_Gunmetal": "Shanôr Hammer",
         "Tool.Restoration_Hammer_Starmetal": "Star-metal Hammer",
         "Tool.Restoration_Hammer_Steel": "Steel Hammer",
-        "Tool.Restoration_Hammer_Adamant": "Adamant Hammer"
+        "Tool.Restoration_Hammer_Adamant": "Adamant Hammer",
+        "Tool.Restoration_Tobi_Hammer": "Tobi's Hammer"
     },
     "UnlockRequiredConstructions": {
         "CraftingStation_AdvancedForge": "Khuzdul Forge",
